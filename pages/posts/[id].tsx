@@ -2,6 +2,7 @@ import axios from "axios";
 
 export async function getStaticPaths() {
   console.log(">Static Paths Generation");
+  console.log(process.env.VERCEL_URL);
   const response = await axios.get("http://localhost:3000/api/posts");
   const posts = response.data;
   // const { db } = await connectToDatabase();
