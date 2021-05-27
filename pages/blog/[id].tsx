@@ -2,7 +2,7 @@ import axios from "axios";
 import { connectToDatabase } from "../../util/mongodb";
 
 export async function getStaticPaths() {
-  console.log(">Static Paths Generation");
+  console.log(">Static Paths Blog Page Generation");
   const query = {};
 
   const projection = {
@@ -29,6 +29,7 @@ export async function getStaticPaths() {
     paths.push({ params: { id: posts[i]._id.toString() } });
   }
 
+  console.log(">Static Paths Blog Page Generated");
   console.log(paths);
 
   return {
@@ -38,7 +39,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-  console.log(">Static Props Generation");
+  console.log(">Static Props Blog Page " + context.params.id + " Generation");
   // const response = await axios.get(
   //   `http://localhost:3000/api/posts/${context.params.id}`
   // );
@@ -51,6 +52,8 @@ export async function getStaticProps(context) {
 
   const response = await axios.get(baseUrl + "/api/posts/" + context.params.id);
   const blogPost = response.data;
+
+  console.log(blogPost);
 
   return {
     props: blogPost,

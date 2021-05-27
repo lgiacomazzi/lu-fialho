@@ -2,9 +2,10 @@ import axios from "axios";
 import Link from "next/link";
 
 export async function getStaticProps(context) {
+  console.log(">Static Props Blog Generation");
   var baseUrl = "http://localhost:3000";
   if (process.env.VERCEL_URL) {
-    baseUrl = process.env.VERCEL_URL;
+    baseUrl = "http://lu-fialho.vercel.app";
   }
 
   console.log(baseUrl);
@@ -25,7 +26,7 @@ export default function Posts({ posts = [] }) {
       <ul>
         {posts.map((post) => (
           <li key={post._id}>
-            <Link href={`/posts/${post._id}`}>
+            <Link href={`/blog/${post._id}`}>
               <a>{post.title}</a>
             </Link>
             <h3>{post.body}</h3>

@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -19,6 +20,8 @@ export default function Home() {
         </h1>
 
         <p className="description">Conheça meu portfólio</p>
+
+        <Link href="/blog">Blog</Link>
       </main>
 
       <footer></footer>
