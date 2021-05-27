@@ -1,25 +1,28 @@
-import { connectToDatabase } from "../util/mongodb";
+import axios from "axios";
+import Link from "next/link";
 
-export async function getServerSideProps() {
-  const { db } = await connectToDatabase();
-  const posts = await db.collection("posts").find({}).limit(20).toArray();
+export async function getStaticProps(context) {
+  const response = await axios.get("http://localhost:3000/api/posts");
+  const posts = response.data;
   return {
     props: {
-      posts: JSON.parse(JSON.stringify(posts)),
+      posts,
     },
   };
 }
 
-export default function Posts({ posts }) {
+export default function Posts({ posts = [] }) {
   return (
     <div>
       <h1>Posts</h1>
       <ul>
         {posts.map((post) => (
-          <li>
-            <h2>{post.title}</h2>
+          <li key={post._id}>
+            <Link href={`/posts/${post._id}`}>
+              <a>{post.title}</a>
+            </Link>
             <h3>{post.body}</h3>
-            <p>{post._id}</p>
+            <span>{post._id}</span>
           </li>
         ))}
       </ul>
