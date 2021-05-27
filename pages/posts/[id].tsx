@@ -3,7 +3,11 @@ import axios from "axios";
 export async function getStaticPaths() {
   console.log(">Static Paths Generation");
   console.log(process.env.VERCEL_URL);
-  const response = await axios.get("http://localhost:3000/api/posts");
+  var baseUrl = "http://localhost:3000";
+  if (process.env.VERCEL_URL) {
+    baseUrl = process.env.VERCEL_URL;
+  }
+  const response = await axios.get(baseUrl + "/api/posts");
   const posts = response.data;
   // const { db } = await connectToDatabase();
   // const posts = await db.collection("posts").find({}).limit(20).toArray();
