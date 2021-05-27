@@ -1,17 +1,26 @@
 import axios from "axios";
+import { connectToDatabase } from "../../util/mongodb";
 
 export async function getStaticPaths() {
   console.log(">Static Paths Generation");
+  const query = {};
 
-  var baseUrl = "http://localhost:3000";
-  if (process.env.VERCEL_URL) {
-    baseUrl = process.env.VERCEL_URL;
-  }
+  const projection = {
+    _id: 1,
+  };
 
-  console.log(baseUrl);
+  const { db } = await connectToDatabase();
+  const posts = await db.collection("posts").find(query, projection).toArray();
 
-  const response = await axios.get(baseUrl + "/api/posts");
-  const posts = response.data;
+  // var baseUrl = "http://localhost:3000";
+  // if (process.env.VERCEL_URL) {
+  //   baseUrl = process.env.VERCEL_URL;
+  // }
+
+  // console.log(baseUrl);
+
+  // const response = await axios.get(baseUrl + "/api/posts");
+  // const posts = response.data;
   // const { db } = await connectToDatabase();
   // const posts = await db.collection("posts").find({}).limit(20).toArray();
 
@@ -30,9 +39,17 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   console.log(">Static Props Generation");
-  const response = await axios.get(
-    `http://localhost:3000/api/posts/${context.params.id}`
-  );
+  // const response = await axios.get(
+  //   `http://localhost:3000/api/posts/${context.params.id}`
+  // );
+  var baseUrl = "http://localhost:3000";
+  if (process.env.VERCEL_URL) {
+    baseUrl = process.env.VERCEL_URL;
+  }
+
+  console.log(baseUrl);
+
+  const response = await axios.get(baseUrl + "/api/posts/" + context.params.id);
   const post = response.data;
 
   return {
