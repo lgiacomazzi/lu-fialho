@@ -50,18 +50,18 @@ export async function getStaticProps(context) {
   console.log(baseUrl);
 
   const response = await axios.get(baseUrl + "/api/posts/" + context.params.id);
-  const post = response.data;
+  const blogPost = response.data;
 
   return {
-    props: post,
+    props: blogPost,
   };
 }
 
-export default function Post(post) {
+export default function BlogPage(blogPost) {
   return (
     <div>
-      <h1>{post.title}</h1>
-      <span>{post.body}</span>
+      <h1>{blogPost.title}</h1>
+      <span>{blogPost.body}</span>
     </div>
   );
 }
