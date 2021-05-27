@@ -2,7 +2,11 @@ import axios from "axios";
 import Link from "next/link";
 
 export async function getStaticProps(context) {
-  const response = await axios.get("http://localhost:3000/api/posts");
+  const instance = axios.create({
+    baseURL: "http://localhost:3000",
+  });
+  console.log(process.env.VERCEL_URL);
+  const response = await instance.get("/api/posts");
   const posts = response.data;
   return {
     props: {
