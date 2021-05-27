@@ -12,6 +12,9 @@ async function post(req, res) {
     title: 0,
   };
 
+  console.log(process.env);
+  console.log(process.env.PATH);
+
   const { db } = await connectToDatabase();
   const post = await db.collection("posts").findOne(query, projection);
   return res.json(post);
