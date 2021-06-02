@@ -1,8 +1,10 @@
 import { connectToDatabase } from "../../../util/mongodb";
 import { ObjectID } from "mongodb";
 
-async function post(req, res) {
-  const _id = ObjectID(req.query.id);
+export default async function (req, res) {
+  const _id = new ObjectID(req.query.id);
+
+  const { db } = await connectToDatabase();
 
   const query = {
     _id,
@@ -12,9 +14,7 @@ async function post(req, res) {
     title: 0,
   };
 
-  const { db } = await connectToDatabase();
   const post = await db.collection("posts").findOne(query, projection);
+
   return res.json(post);
 }
-
-export default post;
