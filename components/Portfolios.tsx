@@ -8,7 +8,7 @@ type Props = {
 const Portfolios = ({ portfolios }: Props) => {
   return (
     <div className="portfoliosContainer">
-      {portfolios.map((portfolio) => (
+      {portfolios?.map((portfolio) => (
         <PortfolioLine
           title={portfolio.title}
           date={portfolio.date}

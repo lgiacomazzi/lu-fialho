@@ -1,9 +1,10 @@
 import { connectToDatabase } from "../../../util/mongodb";
+import { VercelRequest, VercelResponse } from "@vercel/node";
 
-export default async function (req, res) {
+export default async function (req: VercelRequest, res: VercelResponse) {
   const { db } = await connectToDatabase();
 
-  const query = {};
+  const query = req.query;
   const projection = {};
 
   const portfolios = await db
@@ -25,5 +26,8 @@ export async function getAllPortfolios() {
     .find(query, projection)
     .toArray();
 
-  return portfolios;
+  const serializedPortfolios = JSON.parse(JSON.stringify(portfolios));
+  // console.log(JSON.parse(JSON.stringify(portfolios)));
+
+  return serializedPortfolios;
 }
