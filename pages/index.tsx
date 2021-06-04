@@ -6,6 +6,7 @@ import Blog from "../components/Blog";
 import Portfolios from "../components/Portfolios";
 import Container from "../components/Container";
 import Layout from "../components/Layout";
+import Footer from "../components/Footer";
 
 import PortfoliosType from "../types/portfolios";
 // import { useFetch } from "../hooks/fetcher";
@@ -39,6 +40,7 @@ export default function Home({ portfolios }: HomeProps) {
       <Intro />
       <Portfolios portfolios={portfolios} />
       <Blog />
+      <Footer />
     </Layout>
   );
 }
