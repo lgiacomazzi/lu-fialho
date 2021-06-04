@@ -12,7 +12,7 @@
     background-color: var(--ui-dark);
     color: var(--text-invert);
 
-    position: absolute;
+    position: fixed;
     left: 0px;
     bottom: 0px;
 
