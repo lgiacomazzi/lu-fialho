@@ -1,5 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import NavBar from "../components/NavBar";
+import Navbar from "../components/Navbar";
 
 export default class MyDocument extends Document {
   render() {
@@ -19,7 +19,7 @@ export default class MyDocument extends Document {
             type="font/ttf"
           />
         </Head>
-        <NavBar />
+        <Navbar />
         <body>
           <Main />
           <NextScript />

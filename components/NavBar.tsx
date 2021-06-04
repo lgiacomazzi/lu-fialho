@@ -1,5 +1,6 @@
 import Link from "next/link";
-import styles from "../styles/components/Navbar.module.css";
+import Icon from "./Icon";
+import styles from "../styles/components/Navbari.module.css";
 
 export const NavLink = ({ children, href }) => {
   return (
@@ -9,16 +10,21 @@ export const NavLink = ({ children, href }) => {
   );
 };
 
-const NavBar = () => {
+const Navbar = () => {
   return (
     <div className={styles.navbar}>
-      <NavLink href="/">Home</NavLink>
-      <NavLink href="/portfolio">Portfolio</NavLink>
-      <NavLink href="/blog">Blog</NavLink>
-      <NavLink href="/sobre-mim">Sobre Mim</NavLink>
-      <NavLink href="/contato">Contato</NavLink>
+      <Icon icon="menu" size={28}></Icon>
+      <h5>Luise Fialho</h5>
+      <Icon icon="search" size={28}></Icon>
+      <div className={styles.navbarMenu}>
+        <NavLink href="/">Home</NavLink>
+        <NavLink href="/portfolio">Portfolio</NavLink>
+        <NavLink href="/blog">Blog</NavLink>
+        <NavLink href="/sobre-mim">Sobre Mim</NavLink>
+        <NavLink href="/contato">Contato</NavLink>
+      </div>
     </div>
   );
 };
 
-export default NavBar;
+export default Navbar;

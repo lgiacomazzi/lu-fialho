@@ -93,6 +93,12 @@ h4 {
   text-transform: uppercase;
 }
 
+h5 {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Big Caslon", serif;
+}
+
 p {
   line-height: 140%;
 }
