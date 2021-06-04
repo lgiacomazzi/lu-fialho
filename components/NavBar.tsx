@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Icon from "./Icon";
-import styles from "../styles/components/Navbari.module.css";
+import styles from "../styles/components/Navbar.module.css";
 
 export const NavLink = ({ children, href }) => {
   return (
