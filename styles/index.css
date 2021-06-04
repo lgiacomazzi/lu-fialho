@@ -45,9 +45,10 @@
   --text-01: #000000;
   --text-02: #999999;
   --text-03: #cccccc;
+  --text-invert: #ffffff;
+  --text-hover: #abb6ba;
 
   --interactive-dark: #000000;
-  --text-invert: #ffffff;
 
   --border-color: #00000021;
   --default-border: 0.5px solid var(--border-color);
@@ -59,12 +60,54 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--ui-light);
   color: var(--text-01);
   font-size: 16px;
   font-weight: 300;
   font-family: "Helvetica Neue", sans-serif;
+
+  cursor: url("/svg/cursor.svg") 4 1, auto;
+}
+
+a:-webkit-any-link {
+  color: var(--text-01);
+  transition: 300ms;
+}
+
+a:-webkit-any-link:hover {
+  color: var(--text-hover);
+}
+
+img {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+
+  -webkit-user-drag: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
 }
 
 h1 {
@@ -114,11 +157,26 @@ p.comment {
 .container {
   max-width: 1200px;
   margin: auto;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .container-fluid {
   width: 100%;
   margin: auto;
+}
+
+.blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 @media (max-width: 768px) {

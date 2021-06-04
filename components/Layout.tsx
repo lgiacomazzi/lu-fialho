@@ -1,6 +1,6 @@
-// import Alert from './alert'
 import Footer from "./Footer";
 import Meta from "./Meta";
+import Navbar from "./Navbar";
 
 type Props = {
   preview?: boolean;
@@ -11,10 +11,8 @@ const Layout = ({ preview, children }: Props) => {
   return (
     <>
       <Meta />
-      <div className="container-fluid">
-        {/* <Alert preview={preview} /> */}
-        <main>{children}</main>
-      </div>
+      <Navbar />
+      <main className="container-fluid">{children}</main>
       <Footer />
     </>
   );
