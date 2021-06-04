@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <div className={styles.navbar}>
       <Icon icon="menu" size={28}></Icon>
-      <h5>Luise Fisalho</h5>
+      <h5>Luise Fialho</h5>
       <Icon icon="search" size={28}></Icon>
       <div className={styles.navbarMenu}>
         <NavLink href="/">Home</NavLink>
