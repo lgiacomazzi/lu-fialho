@@ -12,7 +12,6 @@
     "framer-motion": "^4.1.17",
     "mongodb": "^3.5.9",
     "next": "latest",
-    "next-auth": "^3.25.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "swr": "^0.5.6"

@@ -1,5 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import Navbar from "../components/Navbar";
 
 export default class MyDocument extends Document {
   render() {
@@ -8,7 +7,7 @@ export default class MyDocument extends Document {
         <Head>
           <link
             rel="preload"
-            href="/fonts/BigCarslon-Regular.ttf"
+            href="/fonts/BigCaslon-Regular.ttf"
             as="font"
             type="font/ttf"
           />
@@ -19,7 +18,6 @@ export default class MyDocument extends Document {
             type="font/ttf"
           />
         </Head>
-        <Navbar />
         <body>
           <Main />
           <NextScript />
