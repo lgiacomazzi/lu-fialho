@@ -1,0 +1,10 @@
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 56px;
+  padding-bottom: 32px;
+
+  height: 90vh;
+}

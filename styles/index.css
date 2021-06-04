@@ -1,55 +1,86 @@
-@tailwind base;
+:root {
+  --ui-dark: #000000;
+  --ui-light: #ffffff;
 
-/* Write your own custom base styles here */
+  --text-01: #000000;
+  --text-02: #999999;
+  --text-03: #cccccc;
+
+  --interactive-dark: #000000;
+  --text-invert: #ffffff;
+
+  --border-color: #00000021;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
 
 body {
-  background-color: #e8ffff;
-  color: #213e3b;
+  background-color: var(--ui-light);
+  color: var(--text-01);
+  font-size: 16px;
+  font-weight: 300;
+  font-family: "Helvetica Neue", sans-serif;
 }
 
 h1 {
-  color: #14274e;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 130%;
+  font-family: "Big Caslon", serif;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 400;
+  font-family: "Big Caslon", serif;
 }
 
 h3 {
-  color: #7579e7;
+  font-size: 24px;
+  font-weight: 400;
+  font-family: "Big Caslon", serif;
 }
 
-.dark-mode {
-  background-color: #e8ffff;
+h4 {
+  font-size: 16px;
+  font-weight: inherit;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #010101;
-    color: #f0ece2;
-  }
+p {
+  line-height: 140%;
+}
 
+p .lead {
+  font-size: 18px;
+}
+
+p .comment {
+  font-size: 14px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.container-fluid {
+  width: 100%;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
   h1 {
-    color: #7579e7;
+    font-size: 38px;
   }
 
-  h3 {
-    color: #69779b;
-  }
-
-  img {
-    filter: brightness(0.9);
-  }
-
-  .dark-mode {
-    background-color: rgb(18, 18, 20);
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
-
-/* Start purging... */
-@tailwind components;
-/* Stop purging. */
-
-/* Write you own custom component styles here */
-
-/* Start purging... */
-@tailwind utilities;
-/* Stop purging. */
-
-/* Your own custom utilities */
