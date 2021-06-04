@@ -8,7 +8,7 @@ type Props = {
 
 const Portfolios = ({ portfolios }: Props) => {
   return (
-    <div className="portfoliosContainer">
+    <div className="container-fluid">
       {portfolios?.map((portfolio) => (
         <AnimateSharedLayout>
           <PortfolioLine

@@ -23,12 +23,14 @@ const PortfolioLine = ({ title, date, info }: Props) => {
       className={styles.portfolioPreview}
       onClick={() => setIsOpen(!isOpen)}
     >
-      <h4>{title}</h4>
-      <p className="comment">({date})</p>
-      {isOpen && (
-        // <PortfolioBody info={info} />
-        <motion.div>{info}</motion.div>
-      )}
+      <div className="container">
+        <h4>{title}</h4>
+        <p className="comment">({date})</p>
+        {isOpen && (
+          // <PortfolioBody info={info} />
+          <motion.div>{info}</motion.div>
+        )}
+      </div>
     </div>
   );
 };

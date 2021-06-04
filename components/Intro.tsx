@@ -1,6 +1,6 @@
-import styles from "../styles/components/Intro.module.css";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import styles from "../styles/components/Intro.module.css";
 
 const Intro = () => {
   return (

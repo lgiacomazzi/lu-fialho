@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Big Caslon";
-  src: url("/fonts/BigCarlson-Regular.ttf");
+  src: url("/fonts/BigCaslon-Regular.ttf");
   font-style: regular;
   font-weight: 400;
   font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: "Big Caslon";
-  src: url("/fonts/BigCarlson-Bold.ttf");
+  src: url("/fonts/BigCaslon-Bold.ttf");
   font-style: bold;
   font-weight: 700;
   font-display: swap;
@@ -50,6 +50,7 @@
   --text-invert: #ffffff;
 
   --border-color: #00000021;
+  --default-border: 0.5px solid var(--border-color);
 }
 
 * {
@@ -96,11 +97,11 @@ p {
   line-height: 140%;
 }
 
-p .lead {
+p.lead {
   font-size: 18px;
 }
 
-p .comment {
+p.comment {
   font-size: 14px;
 }
 
