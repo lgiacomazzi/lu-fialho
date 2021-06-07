@@ -16,10 +16,6 @@
   padding: 14px 24px;
 }
 
-.navbar > h5 {
-  display: none;
-}
-
 .navbarMenu {
   display: flex;
   flex-direction: row;
@@ -73,6 +69,10 @@
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    margin: auto;
+  }
+
   .navbar > h5 {
     display: inherit;
   }

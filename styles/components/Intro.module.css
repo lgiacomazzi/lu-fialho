@@ -1,20 +1,21 @@
 .intro {
   display: flex;
   flex-direction: column;
-
   justify-content: flex-start;
   align-items: flex-start;
 
   height: 100vh;
-  min-height: 100vh;
+  min-height: 600px;
 
-  margin-top: 120px;
+  padding-top: 120px;
 }
 
-.intro > h1 {
+.manifest {
   margin-top: 48px;
+  font-size: 56px;
   margin-bottom: 200px;
-  max-width: 700px;
+
+  max-width: 800px;
 }
 
 .introCTA {
@@ -35,7 +36,7 @@
 
 @media (max-width: 768px) {
   .intro {
-    padding-top: 56px;
+    padding-top: 16px;
     padding-bottom: 32px;
 
     justify-content: space-between;
@@ -43,11 +44,10 @@
     height: 70vh;
     min-height: 70vh;
     min-height: -webkit-fill-available;
-
-    margin-top: 56px;
   }
 
-  .intro > h1 {
+  .manifest {
+    font-size: 36px;
     margin: auto;
   }
 }

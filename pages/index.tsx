@@ -22,16 +22,9 @@ export async function getStaticProps() {
 }
 
 export default function Home({ portfolios }: HomeProps) {
-  const { scrollYProgress } = useViewportScroll();
-  useEffect(() => {
-    console.log(scrollYProgress);
-  }, [scrollYProgress]);
   // const response = useFetch("/api/portfolios");
   return (
     <Layout>
-      <Head>
-        <title>Luise Fialho | Editora e redatora</title>
-      </Head>
       <Intro />
       <Portfolios portfolios={portfolios} />
       <Blog />

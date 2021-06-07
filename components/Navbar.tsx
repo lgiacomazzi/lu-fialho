@@ -3,7 +3,7 @@ import Icon from "./Icon";
 import styles from "../styles/components/Navbar.module.css";
 import Container from "./Container";
 import { UserInterfaceContext } from "../contexts/UserInterfaceContext";
-import { motion } from "framer-motion";
+import { motion, useTransform, useViewportScroll } from "framer-motion";
 import { useContext } from "react";
 
 export const NavLink = ({ children, href }) => {
@@ -44,34 +44,12 @@ export const NavMenu = () => {
   );
 };
 
-export const NavMenuPage = () => {
-  const { isSidebarOpen, setIsSidebarOpen } = useContext(UserInterfaceContext);
-  const sidebarState = {
-    open: {
-      x: 200,
-    },
-    close: {
-      x: 0,
-    },
-  };
-  return (
-    <motion.div
-      initial={sidebarState.close}
-      animate={isSidebarOpen ? "open" : "close"}
-      variants={sidebarState}
-      className={styles.navbarMenuPage}
-    >
-      <NavMenu />
-    </motion.div>
-  );
-};
-
 export const BurgerMenu = () => {
   const { isSidebarOpen, setIsSidebarOpen } = useContext(UserInterfaceContext);
 
   return (
     <motion.div
-      whileTap={{ scale: 0.8, opacity: 0.8 }}
+      whileTap={{ scale: 0.8 }}
       onClick={() => setIsSidebarOpen(!isSidebarOpen)}
     >
       <Icon icon="menu" size={28}></Icon>
@@ -80,13 +58,25 @@ export const BurgerMenu = () => {
 };
 
 const Navbar = () => {
+  const { scrollYProgress } = useViewportScroll();
+  const visibility = useTransform(scrollYProgress, [0, 100], [0, 100]);
+
   return (
-    <motion.div className={styles.navbar + " container"}>
+    <motion.div
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.8 }}
+      className={styles.navbar + " container"}
+    >
       <BurgerMenu />
-      <h5>Luise Fialho</h5>
-      <div className={styles.navbarRightSide}></div>
-      <NavMenu />
-      <NavMenuPage />
+      <Link href={"/"}>
+        <motion.h5 style={{ opacity: visibility }} initial={{ opacity: 0 }}>
+          Luise Fialho
+        </motion.h5>
+      </Link>
+      <div className={styles.navbarRightSide}>
+        <NavMenu />
+      </div>
     </motion.div>
   );
 };
