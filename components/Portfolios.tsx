@@ -1,9 +1,9 @@
 import PortfolioLine from "./PortfolioLine";
-import PortfoliosType from "../types/portfolios";
+import { PortfolioType } from "../types/portfolios";
 import { AnimateSharedLayout } from "framer-motion";
 
 type Props = {
-  portfolios: PortfoliosType[];
+  portfolios: PortfolioType[];
 };
 
 const Portfolios = ({ portfolios }: Props) => {
@@ -13,8 +13,10 @@ const Portfolios = ({ portfolios }: Props) => {
         <AnimateSharedLayout>
           <PortfolioLine
             title={portfolio.title}
+            subtitle={portfolio.subtitle}
             date={portfolio.date}
             info={portfolio.info}
+            links={portfolio.links}
           />
         </AnimateSharedLayout>
       ))}

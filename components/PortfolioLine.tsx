@@ -8,14 +8,9 @@ import {
 } from "framer-motion";
 import PortfolioBody from "../components/PortfolioBody";
 import styles from "../styles/components/PortfolioLine.module.css";
+import { PortfolioType } from "../types/portfolios";
 
-type Props = {
-  title?: string;
-  date?: string;
-  info?: string;
-};
-
-const PortfolioLine = ({ title, date, info }: Props) => {
+const PortfolioLine = ({ title, subtitle, date, info }: PortfolioType) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -25,12 +20,15 @@ const PortfolioLine = ({ title, date, info }: Props) => {
       onClick={() => setIsOpen(!isOpen)}
     >
       <img src="/portfolio/teste.png" alt="Luise Fialho" width="100%" />
-      <h4>{title}</h4>
-      <p className="comment">({date})</p>
-      {isOpen && (
-        // <PortfolioBody info={info} />
-        <motion.div>{info}</motion.div>
-      )}
+      <div className={styles.portfolioPreviewContent}>
+        <p className="comment">({date})</p>
+        <h2>{title}</h2>
+        <p className="lead">{subtitle}</p>
+        {isOpen && (
+          // <PortfolioBody info={info} />
+          <motion.div>{info}</motion.div>
+        )}
+      </div>
     </div>
   );
 };
