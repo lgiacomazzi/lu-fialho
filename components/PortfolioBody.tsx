@@ -1,5 +1,6 @@
 import styles from "../styles/components/PortfolioBody.module.css";
 import YoutubeIframe from "../components/YoutubeIframe";
+import Icon from "./Icon";
 
 type PortfolioBodyProps = {
   info: string;

@@ -1,4 +1,13 @@
+.portfolioBody {
+    margin-top: 16px;
+}
+
+.portfolioBody:before {
+    content: "____";
+    color: var(--text-02)
+}
+
 .portfolioBody > p {
-    margin-top: 1em;
-    margin-bottom: 1em;
+    padding-top: 16px;
+    margin-bottom: 16px;
 }
