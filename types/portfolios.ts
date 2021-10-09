@@ -9,5 +9,6 @@ export type PortfolioType = {
   date: string;
   info: string;
   image?: string;
+  youtube?: string;
   links?: PortfolioLinkType[];
 };

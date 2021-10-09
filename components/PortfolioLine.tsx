@@ -5,10 +5,14 @@ import PortfolioBody from "../components/PortfolioBody";
 import styles from "../styles/components/PortfolioLine.module.css";
 import { PortfolioType } from "../types/portfolios";
 
-const PortfolioLine = ({ portfolio }) => {
+type PortfolioLineProps = {
+  portfolio: PortfolioType;
+}
+
+const PortfolioLine = ({ portfolio }: PortfolioLineProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const { title, subtitle, date, info, image, links } = portfolio;
+  const { title, subtitle, date, info, image, links, youtube } = portfolio;
   return (
     <div
       className={styles.portfolioPreview}
@@ -21,8 +25,7 @@ const PortfolioLine = ({ portfolio }) => {
         <h2>{title}</h2>
         <p className="lead">{subtitle}</p>
         {isOpen && (
-          // <PortfolioBody info={info} />
-          <motion.div>{info}</motion.div>
+          <PortfolioBody info={info} youtube={youtube} />
         )}
       </div>
     </div>
