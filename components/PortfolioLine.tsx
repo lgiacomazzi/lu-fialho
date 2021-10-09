@@ -1,11 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
-import {
-  motion,
-  AnimateSharedLayout,
-  AnimatePresence,
-  useAnimation,
-} from "framer-motion";
+import { motion } from "framer-motion";
 import PortfolioBody from "../components/PortfolioBody";
 import styles from "../styles/components/PortfolioLine.module.css";
 import { PortfolioType } from "../types/portfolios";
@@ -16,11 +11,11 @@ const PortfolioLine = ({ portfolio }) => {
   const { title, subtitle, date, info, image, links } = portfolio;
   return (
     <div
-      // animate={{ height: 10 }}
       className={styles.portfolioPreview}
       onClick={() => setIsOpen(!isOpen)}
     >
       {image && <img src={`/portfolio/${image}`} alt="Luise Fialho" width="100%" />}
+
       <div className={styles.portfolioPreviewContent}>
         <p className="comment">({date})</p>
         <h2>{title}</h2>

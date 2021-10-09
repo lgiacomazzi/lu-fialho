@@ -16,15 +16,7 @@ const Portfolio = ({ portfolios }) => {
       <div className="container">
         <h2>Portfólio</h2>
       </div>
-      {portfolios?.map((portfolio) => (
-        <AnimateSharedLayout>
-          <PortfolioLine
-            title={portfolio.title}
-            date={portfolio.date}
-            info={portfolio.info}
-          />
-        </AnimateSharedLayout>
-      ))}
+
     </div>
   );
 };
