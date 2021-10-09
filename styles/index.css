@@ -43,15 +43,12 @@
   --ui-light: #ffffff;
 
   --text-01: #000000;
-  --text-02: #999999;
-  --text-03: #cccccc;
+  --text-02: #666666;
   --text-invert: #ffffff;
-  --text-hover: #abb6ba;
 
   --interactive-dark: #000000;
 
-  --border-color: #00000021;
-  --default-border: 0.5px solid var(--border-color);
+  --border-color: #E5E5E5;
 }
 
 * {
@@ -70,17 +67,17 @@ body {
   font-size: 16px;
   font-weight: 300;
   font-family: "Helvetica Neue", sans-serif;
-
   cursor: url("/svg/cursor.svg") 4 1, auto;
+}
+
+a, button {
+  cursor: url("/svg/pointer.svg") 4 1, auto;
 }
 
 a:-webkit-any-link {
   color: var(--text-01);
   transition: 300ms;
-}
-
-a:-webkit-any-link:hover {
-  color: var(--text-hover);
+  text-decoration: none;
 }
 
 img {
@@ -112,42 +109,47 @@ span {
 
 h1 {
   font-size: 48px;
-  font-weight: 800;
+  font-weight: bold;
   line-height: 130%;
   font-family: "Big Caslon", serif;
 }
 
 h2 {
   font-size: 28px;
-  font-weight: 400;
+  font-weight: bold;
   font-family: "Big Caslon", serif;
 }
 
 h3 {
   font-size: 24px;
-  font-weight: 400;
+  font-weight: bold;
   font-family: "Big Caslon", serif;
 }
 
 h4 {
-  font-size: 16px;
-  font-weight: inherit;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-h5 {
   font-size: 20px;
   font-weight: bold;
   font-family: "Big Caslon", serif;
 }
 
-p {
-  line-height: 140%;
+h5 {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Big Caslon", serif;
+}
+
+h6 {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Helvetica Neue", sans-serif;
 }
 
 p.lead {
   font-size: 18px;
+}
+
+p {
+  line-height: 140%;
 }
 
 p.comment {
@@ -167,10 +169,10 @@ p.comment {
 }
 
 @media (max-width: 768px) {
-  h1 {
-    font-size: 38px;
+  h1 { 
+    font-size: 36px
   }
-
+  
   .container {
     padding-left: 24px;
     padding-right: 24px;

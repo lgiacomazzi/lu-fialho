@@ -77,6 +77,7 @@ const Navbar = () => {
         </motion.h5>
       </Link>
       <div className={styles.navbarRightSide}>
+        <Icon icon="linkedin" size={28}></Icon>
         <NavMenu />
       </div>
     </motion.div>

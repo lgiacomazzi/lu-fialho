@@ -16,7 +16,7 @@ const Intro = () => {
         >
           <Image src="/avatar.png" alt="Luise Fialho" width={60} height={60} />
           <div>
-            <h5>Luise Fialho</h5>
+            <h4>Luise Fialho</h4>
             <p>Editora e Redatora</p>
           </div>
         </motion.div>
@@ -40,7 +40,7 @@ const Intro = () => {
         href="/#portfolios"
       >
         <Icon icon="arrow_down" size={20} />
-        <p className="comment">Conheça meu portfólio</p>
+        Conheça meu portfólio
       </motion.a>
     </div>
   );
