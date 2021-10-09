@@ -17,6 +17,7 @@ const PortfolioLine = ({ portfolio }: PortfolioLineProps) => {
     <div
       className={styles.portfolioPreview}
       onClick={() => setIsOpen(!isOpen)}
+      data-open={isOpen}
     >
       {image && <img src={`/portfolio/${image}`} alt="Luise Fialho" width="100%" />}
 
@@ -24,10 +25,11 @@ const PortfolioLine = ({ portfolio }: PortfolioLineProps) => {
         <p className="comment">({date})</p>
         <h2>{title}</h2>
         <p className="lead">{subtitle}</p>
-        {isOpen && (
-          <PortfolioBody info={info} youtube={youtube} />
-        )}
+
+        <PortfolioBody info={info} youtube={youtube} />
+        {/* )} */}
       </div>
+      <div className={styles.overlay} data-open={isOpen} />
     </div>
   );
 };

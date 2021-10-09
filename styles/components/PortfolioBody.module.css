@@ -4,7 +4,7 @@
 
 .portfolioBody:before {
     content: "____";
-    color: var(--text-02)
+    color: var(--text-02);
 }
 
 .portfolioBody > p {
