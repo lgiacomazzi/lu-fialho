@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useState } from "react";
 import {
   motion,
@@ -23,14 +24,13 @@ const PortfolioLine = ({ title, date, info }: Props) => {
       className={styles.portfolioPreview}
       onClick={() => setIsOpen(!isOpen)}
     >
-      <div className="container">
-        <h4>{title}</h4>
-        <p className="comment">({date})</p>
-        {isOpen && (
-          // <PortfolioBody info={info} />
-          <motion.div>{info}</motion.div>
-        )}
-      </div>
+      <img src="/portfolio/teste.png" alt="Luise Fialho" width="100%" />
+      <h4>{title}</h4>
+      <p className="comment">({date})</p>
+      {isOpen && (
+        // <PortfolioBody info={info} />
+        <motion.div>{info}</motion.div>
+      )}
     </div>
   );
 };
