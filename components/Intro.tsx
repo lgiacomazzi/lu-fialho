@@ -12,20 +12,24 @@ const Intro = () => {
         <motion.div
           initial={{ y: -50, x: -50, opacity: 0, scale: 0 }}
           animate={{ y: 0, x: 0, opacity: 1, scale: 1 }}
+          className={styles.avatar}
         >
-          <Image src="/avatar.png" alt="Luise Fialho" width={70} height={70} />
+          <Image src="/avatar.png" alt="Luise Fialho" width={60} height={60} />
+          <div>
+            <h5>Luise Fialho</h5>
+            <p>Editora e Redatora</p>
+          </div>
         </motion.div>
         <motion.div></motion.div>
       </div>
       <motion.h1
-        initial={{ x: 100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
         className={styles.manifest}
       >
-        Oi! Sou <a href="/">editora</a>, <a href="/">redatora</a> e{" "}
-        <a href="/">produtora</a> de conteúdo com foco em literatura e mercado
-        editorial<span className="blink">_</span>
+        Oi! Sou editora, redatora e produtora de conteúdo com foco em literatura e mercado
+        editorial<span className={styles.blink}>_</span>
       </motion.h1>
       <motion.a
         initial={{ y: 100, opacity: 0 }}

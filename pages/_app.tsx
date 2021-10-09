@@ -1,17 +1,18 @@
 import { AppProps } from "next/app";
-import { AnimatePresence } from "framer-motion";
+import { Provider } from 'next-auth/client'
+
 import UserInterfaceContextProvider from "../contexts/UserInterfaceContext";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import Sidebar from "../components/Sidebar";
+import Adminbar from "../components/Adminbar";
 import "../styles/index.css";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <UserInterfaceContextProvider>
-      <Navbar />
-      <Component {...pageProps} />
-      <Footer />
-    </UserInterfaceContextProvider>
+    <Provider session={pageProps.session}>
+      <UserInterfaceContextProvider>
+        <Adminbar />
+        <Component {...pageProps} />
+      </UserInterfaceContextProvider>
+    </Provider>
+
   );
 }

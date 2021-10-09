@@ -2,9 +2,11 @@ import Link from "next/link";
 import Icon from "./Icon";
 import styles from "../styles/components/Navbar.module.css";
 import Container from "./Container";
+import Dropdown from "./Dropdown";
 import { UserInterfaceContext } from "../contexts/UserInterfaceContext";
 import { motion, useTransform, useViewportScroll } from "framer-motion";
 import { useContext } from "react";
+import { signIn, signOut, useSession } from "next-auth/client";
 
 export const NavLink = ({ children, href }) => {
   return (

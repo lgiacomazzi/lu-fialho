@@ -1,12 +1,6 @@
-import { ReactNode } from "react";
+import styled from 'styled-components';
+import Box from "./Box"
 
-type ContainerProps = {
-  children?: ReactNode;
-  flex?: String;
-};
-
-const Container: React.FC = ({ children, flex }: ContainerProps) => {
-  return <div className={"container"}>{children}</div>;
-};
+const Container = styled(Box)``
 
 export default Container;

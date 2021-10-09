@@ -1,3 +1,13 @@
+.avatar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.avatar > :last-child {
+  margin-left: 12px
+}
+
 .intro {
   display: flex;
   flex-direction: column;
@@ -13,7 +23,6 @@
 .manifest {
   margin-top: 48px;
   font-size: 56px;
-  margin-bottom: 200px;
 
   max-width: 800px;
 }
@@ -34,6 +43,19 @@
   margin-right: 8px;
 }
 
+.blink {
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 @media (max-width: 768px) {
   .intro {
     padding-top: 16px;
@@ -48,6 +70,5 @@
 
   .manifest {
     font-size: 36px;
-    margin: auto;
   }
 }

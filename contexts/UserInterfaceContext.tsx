@@ -1,4 +1,6 @@
 import { createContext, useState } from "react";
+import { ThemeProvider } from 'styled-components'
+import theme from '../styles/theme'
 
 type InterfaceProps = {
   isSidebarOpen?: boolean;
@@ -12,7 +14,9 @@ const UserInterfaceContextProvider: React.FC<{}> = ({ children }) => {
 
   return (
     <UserInterfaceContext.Provider value={{ isSidebarOpen, setIsSidebarOpen }}>
-      {children}
+      <ThemeProvider theme={theme}>
+        {children}
+      </ThemeProvider>
     </UserInterfaceContext.Provider>
   );
 };
