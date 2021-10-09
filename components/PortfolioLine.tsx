@@ -22,9 +22,11 @@ const PortfolioLine = ({ portfolio }: PortfolioLineProps) => {
       {image && <img src={`/portfolio/${image}`} alt="Luise Fialho" width="100%" />}
 
       <div className={styles.portfolioPreviewContent}>
-        <p className="comment">({date})</p>
-        <h2>{title}</h2>
-        <p className="lead">{subtitle}</p>
+        <div className={styles.portfolioHeader}>
+          <h3>{title}</h3>
+          <p className="comment">({date})</p>
+        </div>
+        <p>{subtitle}</p>
 
         <PortfolioBody info={info} youtube={youtube} />
         {/* )} */}

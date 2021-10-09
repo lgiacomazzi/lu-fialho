@@ -2,12 +2,12 @@
     margin-top: 16px;
 }
 
-.portfolioBody:before {
+/* .portfolioBody:before {
     content: "____";
     color: var(--text-02);
-}
+} */
 
 .portfolioBody > p {
-    padding-top: 16px;
+    /* padding-top: 16px; */
     margin-bottom: 16px;
 }
