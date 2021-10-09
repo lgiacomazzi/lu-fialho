@@ -10,16 +10,17 @@ import PortfolioBody from "../components/PortfolioBody";
 import styles from "../styles/components/PortfolioLine.module.css";
 import { PortfolioType } from "../types/portfolios";
 
-const PortfolioLine = ({ title, subtitle, date, info }: PortfolioType) => {
+const PortfolioLine = ({ portfolio }) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const { title, subtitle, date, info, image, links } = portfolio;
   return (
     <div
       // animate={{ height: 10 }}
       className={styles.portfolioPreview}
       onClick={() => setIsOpen(!isOpen)}
     >
-      <img src="/portfolio/teste.png" alt="Luise Fialho" width="100%" />
+      {image && <img src={`/portfolio/${image}`} alt="Luise Fialho" width="100%" />}
       <div className={styles.portfolioPreviewContent}>
         <p className="comment">({date})</p>
         <h2>{title}</h2>

@@ -8,5 +8,6 @@ export type PortfolioType = {
   subtitle?: string;
   date: string;
   info: string;
+  image?: string;
   links?: PortfolioLinkType[];
 };

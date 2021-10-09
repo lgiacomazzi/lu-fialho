@@ -10,6 +10,11 @@
   transition: 300ms;
 }
 
+.portfolioPreview > img {
+  max-height: 12vh;
+  object-fit: cover;
+}
+
 .portfolioPreviewContent {
   padding: 16px;
 }
