@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import PortfolioBody from "../components/PortfolioBody";
 import styles from "../styles/components/PortfolioLine.module.css";
 import { PortfolioType } from "../types/portfolios";
+import Icon from "./Icon";
 
 type PortfolioLineProps = {
   portfolio: PortfolioType;
@@ -24,13 +25,14 @@ const PortfolioLine = ({ portfolio }: PortfolioLineProps) => {
       <div className={styles.portfolioPreviewContent}>
         <div className={styles.portfolioHeader}>
           <h3>{title}</h3>
-          <p className="comment">({date})</p>
+          <p className="comment">{date}</p>
         </div>
-        <p>{subtitle}</p>
+        {subtitle && <p>{`>`} {subtitle}</p>}
 
         <PortfolioBody info={info} youtube={youtube} />
         {/* )} */}
       </div>
+      <button className={styles.toggle} data-open={isOpen} ><Icon icon="close" size={20} /></button>
       <div className={styles.overlay} data-open={isOpen} />
     </div>
   );
