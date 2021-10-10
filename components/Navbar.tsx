@@ -47,15 +47,19 @@ export const NavMenu = () => {
 };
 
 export const BurgerMenu = () => {
-  const { isSidebarOpen, setIsSidebarOpen } = useContext(UserInterfaceContext);
+  const { isMenuOpen, setIsMenuOpen } = useContext(UserInterfaceContext);
 
   return (
-    <motion.div
+    <motion.button
       whileTap={{ scale: 0.8 }}
-      onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+      onClick={() => {
+        setIsMenuOpen(!isMenuOpen)
+        console.log(isMenuOpen)
+      }
+      }
     >
       <Icon icon="menu" size={28}></Icon>
-    </motion.div>
+    </motion.button>
   );
 };
 

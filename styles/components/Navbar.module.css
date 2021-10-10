@@ -56,14 +56,27 @@
 }
 
 .navbarMenuPage {
-  width: 200px;
+  padding: 24px;
+  width: 100vw;
   background: var(--ui-dark);
   color: var(--text-invert);
 
   position: fixed;
   height: 100vh;
   top: 0;
-  left: -200px;
+  left: -100vw;
+
+  z-index: 1000;
+
+  transition: 400ms;
+}
+
+.sidebarCloseButton {
+  filter: invert(1);
+}
+
+.navbarMenuPage[data-open=true] {
+  left: 0vw;
 }
 
 .navbarCenter {

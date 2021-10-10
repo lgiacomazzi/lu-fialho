@@ -3,24 +3,36 @@ import { NavMenu } from "./Navbar";
 import { UserInterfaceContext } from "../contexts/UserInterfaceContext";
 import { motion } from "framer-motion";
 import { useContext } from "react";
+import Icon from './Icon'
 
-const transition = { duration: 6, ease: [0.65, 0, 0.35, 1] };
-
-const Sidebar = () => {
-  const { isSidebarOpen, setIsSidebarOpen } = useContext(UserInterfaceContext);
-
-  const sidebarState = {
-    open: {
-      x: 200,
-    },
-    close: {
-      x: 0,
-    },
-  };
+const CloseButton = () => {
+  const { isMenuOpen, setIsMenuOpen } = useContext(UserInterfaceContext);
 
   return (
-    <motion.div className={styles.navbarMenuPage}>
-      <NavMenu />
+    <motion.button
+      whileTap={{ scale: 0.8 }}
+      onClick={() => setIsMenuOpen(!isMenuOpen)}
+      className={styles.sidebarCloseButton}
+    >
+      <Icon icon="close" size={28}></Icon>
+    </motion.button>
+  );
+};
+
+const Item = ({ children }) => {
+  return <a className={styles.sidebarItem}><h3>{children}</h3></a>
+}
+
+const Sidebar = () => {
+  const { isMenuOpen, setIsMenuOpen } = useContext(UserInterfaceContext);
+
+  return (
+    <motion.div className={styles.navbarMenuPage} data-open={isMenuOpen}>
+      <CloseButton />
+      <Item>Home</Item>
+      <Item>Biografia</Item>
+      {/* {portfolios && portfolios.map((portfolio) => <Item>{portfolio.item}</Item>)} */}
+      <Item>Contato</Item>
     </motion.div>
   );
 };

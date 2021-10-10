@@ -1,6 +1,4 @@
-import axios from 'axios';
 import { signIn, signOut, useSession } from 'next-auth/client'
-import { useRouter } from 'next/router'
 import Box from '../components/Box'
 import { getAllPortfolios } from './api/portfolios';
 import { getAllPosts } from './api/posts';
@@ -22,8 +20,7 @@ export default function Admin({ portfolios, posts }) {
 
     return (
         <Box>
-            {JSON.stringify(portfolios)}
-            {JSON.stringify(posts)}
+            Draft Js
         </Box>
     )
 }

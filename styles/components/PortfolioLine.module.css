@@ -1,19 +1,12 @@
 .portfolioPreview {
   max-height: 260px;
-  /* margin: 12px; */
   position: relative;
   
   border-top: 1px solid var(--border-color);
   box-shadow: 0px 2px 10px var(--border-color);
-  /* border-radius: 6px; */
+
   overflow: hidden;
-  transition: max-height 400ms;
-
-  cursor: url("/svg/pointer.svg") 4 1, auto;
-}
-
-.portfolioPreview[data-open=true] {
-  max-height: 1000px;
+  transition: 1000ms;
 }
 
 .portfolioHeader {
@@ -29,28 +22,26 @@
   margin-top: 5px;
 }
 
-.overlay {
+.portfolioPreviewContent > ul {
+  list-style-type: ">";
+  padding-inline-start: 10px;
+}
+
+.portfolioPreview > .overlay {
   background: linear-gradient(0deg, white, 70%, #ffffff00);
   position: absolute;
   height: 50px;
   bottom: 0px;
   left: 0px;
   right: 0px;
-  transition: 600ms;
+  transition: 1000ms;
 }
 
-.overlay[data-open=true] {
-  opacity: 0;
-}
 
 .portfolioPreview > img {
   max-height: 12vh;
   transition: .4s;
   object-fit: cover;
-}
-
-.portfolioPreview[data-open=true] > img {
-  max-height: 22vh;
 }
 
 .portfolioPreviewContent {
@@ -76,11 +67,25 @@
   transform: rotate(45deg);
   transition: 200ms;
   
-  z-index: 10;
+  z-index: 1;
 
   filter: invert(1)
 }
 
-.toggle[data-open=true] {
+.portfolioPreview[data-open=true] {
+  padding-bottom: 48px;
+  max-height: 500px;
+}
+
+.portfolioPreview[data-open=true] > img {
+  max-height: 22vh;
+}
+
+.portfolioPreview[data-open=true] > .overlay {
+  height: 0;
+}
+
+.portfolioPreview[data-open=true] .toggle {
   transform: rotate(0deg);
+  filter: invert(0);
 }

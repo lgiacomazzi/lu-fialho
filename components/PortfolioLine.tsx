@@ -1,10 +1,9 @@
-import Image from "next/image";
 import { useState } from "react";
-import { motion } from "framer-motion";
 import PortfolioBody from "../components/PortfolioBody";
-import styles from "../styles/components/PortfolioLine.module.css";
 import { PortfolioType } from "../types/portfolios";
 import Icon from "./Icon";
+
+import styles from "../styles/components/PortfolioLine.module.css";
 
 type PortfolioLineProps = {
   portfolio: PortfolioType;
@@ -12,12 +11,11 @@ type PortfolioLineProps = {
 
 const PortfolioLine = ({ portfolio }: PortfolioLineProps) => {
   const [isOpen, setIsOpen] = useState(false);
-
   const { title, subtitle, date, info, image, links, youtube } = portfolio;
+
   return (
     <div
       className={styles.portfolioPreview}
-      onClick={() => setIsOpen(!isOpen)}
       data-open={isOpen}
     >
       {image && <img src={`/portfolio/${image}`} alt="Luise Fialho" width="100%" />}
@@ -27,13 +25,18 @@ const PortfolioLine = ({ portfolio }: PortfolioLineProps) => {
           <h3>{title}</h3>
           <p className="comment">{date}</p>
         </div>
-        {subtitle && <p>{`>`} {subtitle}</p>}
-
+        <ul className={styles.portfolioSubtitle}>
+          {subtitle && subtitle.map((subtitleItem) => <li>{subtitleItem}</li>)}
+        </ul>
         <PortfolioBody info={info} youtube={youtube} />
-        {/* )} */}
       </div>
-      {/* <button className={styles.toggle} data-open={isOpen} ><Icon icon="close" size={20} /></button> */}
-      <div className={styles.overlay} data-open={isOpen} />
+      <button
+        className={styles.toggle}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <Icon icon="close" size={20} />
+      </button>
+      <div className={styles.overlay} />
     </div>
   );
 };

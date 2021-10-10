@@ -3,6 +3,7 @@ import { Provider } from 'next-auth/client'
 
 import UserInterfaceContextProvider from "../contexts/UserInterfaceContext";
 import Adminbar from "../components/Adminbar";
+
 import "../styles/index.css";
 
 export default function MyApp({ Component, pageProps }: AppProps) {

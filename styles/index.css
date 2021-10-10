@@ -74,6 +74,15 @@ a, button {
   cursor: url("/svg/pointer.svg") 4 1, auto;
 }
 
+button { 
+  border: none;
+  background: none;
+}
+
+button:hover {
+  transform: scale3d(0.8,0.8,1);
+}
+
 a:-webkit-any-link {
   color: var(--text-01);
   transition: 300ms;

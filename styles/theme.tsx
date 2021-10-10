@@ -1,6 +1,6 @@
 
 export default {
-    space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+    fontSizes: [12, 14, 16, 20, 24, 32],
     colors: {
         ui_dark: "#000000",
         ui_light: "#ffffff",
@@ -13,6 +13,6 @@ export default {
 
         interactive_dark: "#000000",
 
-        border_color: "#00000021",
+        border_color: "#E5E5E5",
     }
 }
