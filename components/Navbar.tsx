@@ -61,7 +61,7 @@ export const BurgerMenu = () => {
 
 const Navbar = () => {
   const { scrollYProgress } = useViewportScroll();
-  const visibility = useTransform(scrollYProgress, [0, 100], [0, 100]);
+  const visibility = useTransform(scrollYProgress, [0, 10], [0, 100]);
 
   return (
     <motion.div
@@ -72,9 +72,10 @@ const Navbar = () => {
     >
       <BurgerMenu />
       <Link href={"/"}>
-        <motion.h5 style={{ opacity: visibility }} initial={{ opacity: 0 }}>
-          Luise Fialho
-        </motion.h5>
+        <motion.div style={{ opacity: visibility }} initial={{ opacity: 0 }} className={styles.navbarCenter}>
+          <h5>Luise Fialho</h5>
+          <p className="comment">Editora e Redatora</p>
+        </motion.div>
       </Link>
       <div className={styles.navbarRightSide}>
         <Icon icon="linkedin" size={28}></Icon>

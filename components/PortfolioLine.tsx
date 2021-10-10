@@ -32,7 +32,7 @@ const PortfolioLine = ({ portfolio }: PortfolioLineProps) => {
         <PortfolioBody info={info} youtube={youtube} />
         {/* )} */}
       </div>
-      <button className={styles.toggle} data-open={isOpen} ><Icon icon="close" size={20} /></button>
+      {/* <button className={styles.toggle} data-open={isOpen} ><Icon icon="close" size={20} /></button> */}
       <div className={styles.overlay} data-open={isOpen} />
     </div>
   );
