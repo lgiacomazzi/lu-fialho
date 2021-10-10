@@ -1,7 +1,7 @@
 .footer {
   width: 100%;
-
-  display: flex;
+  display: none;
+  /* display: flex; */
   flex-direction: row;
   align-items: center;
   padding: 12px 24px 16px;
@@ -19,7 +19,7 @@
     z-index: 2;
   }
 
-  .footer > * {
+  .footer > .container > * {
     flex-grow: 1;
   }
 }

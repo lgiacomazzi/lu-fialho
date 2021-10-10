@@ -1,5 +1,5 @@
-const NavBar = () => {
+const Contato = () => {
   return <div className="container"></div>;
 };
 
-export default NavBar;
+export default Contato;

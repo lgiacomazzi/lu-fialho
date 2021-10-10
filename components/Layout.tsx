@@ -1,23 +1,16 @@
-// import Alert from './alert'
-import Footer from "./Footer";
-import Meta from "./Meta";
 
-type Props = {
-  preview?: boolean;
-  children: React.ReactNode;
-};
+import Box from "./Box"
+import Footer from './Footer';
+import Navbar from './Navbar';
 
-const Layout = ({ preview, children }: Props) => {
-  return (
-    <>
-      <Meta />
-      <div className="container-fluid">
-        {/* <Alert preview={preview} /> */}
-        <main>{children}</main>
-      </div>
-      <Footer />
-    </>
-  );
-};
+const Layout = ({ children }) => {
+    return (
+        <Box>
+            <Navbar />
+            {children}
+            <Footer />
+        </Box>
+    )
+}
 
 export default Layout;

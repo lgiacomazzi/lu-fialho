@@ -1,0 +1,96 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 2;
+  background-color: var(--ui-light);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 48px;
+  height: 60px;
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navbarMenu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.navbarMenu .navLink {
+  display: flex;
+  align-items: center;
+  padding: 0px 16px;
+
+  color: var(--text-01);
+  text-decoration: none;
+  transition: 300ms;
+}
+
+.navbarMenu .navLinkCTA {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: 100px;
+
+  background: var(--ui-dark);
+  color: var(--text-invert);
+}
+
+.navbarMenu .navLinkCTA > img {
+  margin-left: 12px;
+  filter: invert(1);
+}
+
+.navbarMenu .navLink:hover {
+  color: var(--text-hover);
+  text-decoration: underline;
+}
+
+.navbarMenuPage {
+  width: 200px;
+  background: var(--ui-dark);
+  color: var(--text-invert);
+
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: -200px;
+}
+
+.navbarCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbarMenuPage .navbarMenu {
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    margin: auto;
+  }
+
+  .navbar > h5 {
+    display: inherit;
+  }
+
+  .navbarMenu {
+    display: none;
+  }
+
+  .navbarRightSide {
+    width: 28px;
+    height: 28px;
+  }
+}

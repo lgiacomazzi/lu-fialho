@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Big Caslon";
-  src: url("/fonts/BigCarlson-Regular.ttf");
+  src: url("/fonts/BigCaslon-Regular.ttf");
   font-style: regular;
   font-weight: 400;
   font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: "Big Caslon";
-  src: url("/fonts/BigCarlson-Bold.ttf");
+  src: url("/fonts/BigCaslon-Bold.ttf");
   font-style: bold;
   font-weight: 700;
   font-display: swap;
@@ -43,13 +43,12 @@
   --ui-light: #ffffff;
 
   --text-01: #000000;
-  --text-02: #999999;
-  --text-03: #cccccc;
-
-  --interactive-dark: #000000;
+  --text-02: #666666;
   --text-invert: #ffffff;
 
-  --border-color: #00000021;
+  --interactive-dark: #000000;
+
+  --border-color: #E5E5E5;
 }
 
 * {
@@ -58,55 +57,110 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--ui-light);
   color: var(--text-01);
   font-size: 16px;
   font-weight: 300;
   font-family: "Helvetica Neue", sans-serif;
+  cursor: url("/svg/cursor.svg") 4 1, auto;
+}
+
+a, button {
+  cursor: url("/svg/pointer.svg") 4 1, auto;
+}
+
+a:-webkit-any-link {
+  color: var(--text-01);
+  transition: 300ms;
+  text-decoration: none;
+}
+
+img {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+
+  -webkit-user-drag: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
 }
 
 h1 {
   font-size: 48px;
-  font-weight: 400;
+  font-weight: bold;
   line-height: 130%;
   font-family: "Big Caslon", serif;
 }
 
 h2 {
   font-size: 28px;
-  font-weight: 400;
+  font-weight: bold;
   font-family: "Big Caslon", serif;
 }
 
 h3 {
   font-size: 24px;
-  font-weight: 400;
+  font-weight: bold;
   font-family: "Big Caslon", serif;
 }
 
 h4 {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Big Caslon", serif;
+}
+
+h5 {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Big Caslon", serif;
+}
+
+h6 {
   font-size: 16px;
-  font-weight: inherit;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+p.lead {
+  font-size: 18px;
 }
 
 p {
   line-height: 140%;
 }
 
-p .lead {
-  font-size: 18px;
-}
-
-p .comment {
+p.comment {
   font-size: 14px;
 }
 
 .container {
   max-width: 1200px;
   margin: auto;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .container-fluid {
@@ -115,10 +169,10 @@ p .comment {
 }
 
 @media (max-width: 768px) {
-  h1 {
-    font-size: 38px;
+  h1 { 
+    font-size: 36px
   }
-
+  
   .container {
     padding-left: 24px;
     padding-right: 24px;

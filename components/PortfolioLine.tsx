@@ -1,34 +1,39 @@
+import Image from "next/image";
 import { useState } from "react";
-import {
-  motion,
-  AnimateSharedLayout,
-  AnimatePresence,
-  useAnimation,
-} from "framer-motion";
+import { motion } from "framer-motion";
 import PortfolioBody from "../components/PortfolioBody";
 import styles from "../styles/components/PortfolioLine.module.css";
+import { PortfolioType } from "../types/portfolios";
+import Icon from "./Icon";
 
-type Props = {
-  title?: string;
-  date?: string;
-  info?: string;
-};
+type PortfolioLineProps = {
+  portfolio: PortfolioType;
+}
 
-const PortfolioLine = ({ title, date, info }: Props) => {
+const PortfolioLine = ({ portfolio }: PortfolioLineProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const { title, subtitle, date, info, image, links, youtube } = portfolio;
   return (
     <div
-      // animate={{ height: 10 }}
       className={styles.portfolioPreview}
       onClick={() => setIsOpen(!isOpen)}
+      data-open={isOpen}
     >
-      <h4>{title}</h4>
-      <p className="comment">({date})</p>
-      {isOpen && (
-        // <PortfolioBody info={info} />
-        <motion.div>{info}</motion.div>
-      )}
+      {image && <img src={`/portfolio/${image}`} alt="Luise Fialho" width="100%" />}
+
+      <div className={styles.portfolioPreviewContent}>
+        <div className={styles.portfolioHeader}>
+          <h3>{title}</h3>
+          <p className="comment">{date}</p>
+        </div>
+        {subtitle && <p>{`>`} {subtitle}</p>}
+
+        <PortfolioBody info={info} youtube={youtube} />
+        {/* )} */}
+      </div>
+      {/* <button className={styles.toggle} data-open={isOpen} ><Icon icon="close" size={20} /></button> */}
+      <div className={styles.overlay} data-open={isOpen} />
     </div>
   );
 };
