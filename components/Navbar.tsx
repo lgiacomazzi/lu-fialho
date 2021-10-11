@@ -82,7 +82,7 @@ const Navbar = () => {
         </motion.div>
       </Link>
       <div className={styles.navbarRightSide}>
-        <Icon icon="linkedin" size={28}></Icon>
+        <a href="https://www.linkedin.com/in/luisefialho" target="_blank"><Icon icon="linkedin" size={28}></Icon></a>
         <NavMenu />
       </div>
     </motion.div>

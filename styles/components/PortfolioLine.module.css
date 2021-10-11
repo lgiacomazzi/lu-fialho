@@ -1,5 +1,5 @@
 .portfolioPreview {
-  max-height: 260px;
+  max-height: 300px;
   position: relative;
   
   border-top: 1px solid var(--border-color);
@@ -45,7 +45,7 @@
 
 .portfolioPreview > img {
   /* max-height: 12vh; */
-  max-height: 22vh;
+  max-height: 180px;
   transition: .4s;
   object-fit: cover;
 }
