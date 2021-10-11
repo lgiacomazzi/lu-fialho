@@ -30,7 +30,7 @@ const Sidebar = () => {
     <motion.div className={styles.navbarMenuPage} data-open={isMenuOpen}>
       <CloseButton />
       <Item>Home</Item>
-      <Item>Biografia</Item>
+      <Item>Sobre mim</Item>
       {/* {portfolios && portfolios.map((portfolio) => <Item>{portfolio.item}</Item>)} */}
       <Item>Contato</Item>
     </motion.div>

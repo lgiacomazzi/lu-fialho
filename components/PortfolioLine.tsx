@@ -28,7 +28,7 @@ const PortfolioLine = ({ portfolio }: PortfolioLineProps) => {
         <ul className={styles.portfolioSubtitle}>
           {subtitle && subtitle.map((subtitleItem) => <li>{subtitleItem}</li>)}
         </ul>
-        <PortfolioBody info={info} youtube={youtube} />
+        {isOpen && <PortfolioBody info={info} youtube={youtube} />}
       </div>
       <button
         className={styles.toggle}

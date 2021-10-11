@@ -16,6 +16,10 @@
   justify-content: space-between;
 }
 
+.portfolioHeader > h3 {
+  max-width: 260px;
+}
+
 .portfolioHeader > p {
   flex-shrink: 0;
   color: var(--text-02);
@@ -23,11 +27,12 @@
 }
 
 .portfolioPreviewContent > ul {
-  list-style-type: ">";
+  list-style-type: disc;
   padding-inline-start: 10px;
+  margin-left: 10px;
 }
 
-.portfolioPreview > .overlay {
+/* .portfolioPreview > .overlay {
   background: linear-gradient(0deg, white, 70%, #ffffff00);
   position: absolute;
   height: 50px;
@@ -35,7 +40,7 @@
   left: 0px;
   right: 0px;
   transition: 1000ms;
-}
+} */
 
 
 .portfolioPreview > img {
