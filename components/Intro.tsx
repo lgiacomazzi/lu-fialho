@@ -25,8 +25,7 @@ const Intro = () => {
         // transition={{ delay: 0.3 }}
         className={styles.manifest}
       >
-        Oi! Sou editora, redatora e produtora de conteúdo com foco em literatura e mercado
-        editorial<span className={styles.blink}>_</span>
+        Oi! Sou editora, redatora e produtora de conteúdo<span className={styles.blink}>|</span>
       </motion.h1>
       <motion.a
         // initial={{ y: 100, opacity: 0 }}

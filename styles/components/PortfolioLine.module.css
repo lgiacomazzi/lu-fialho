@@ -22,14 +22,14 @@
 
 .portfolioHeader > p {
   flex-shrink: 0;
-  color: var(--text-02);
+  /* color: var(--text-02); */
   margin-top: 5px;
 }
 
 .portfolioPreviewContent > ul {
-  list-style-type: disc;
+  list-style-type: "_";
   padding-inline-start: 10px;
-  margin-left: 10px;
+  font-size: 14px;
 }
 
 /* .portfolioPreview > .overlay {
