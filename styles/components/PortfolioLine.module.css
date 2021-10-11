@@ -44,7 +44,8 @@
 
 
 .portfolioPreview > img {
-  max-height: 12vh;
+  /* max-height: 12vh; */
+  max-height: 22vh;
   transition: .4s;
   object-fit: cover;
 }
