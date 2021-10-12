@@ -20,10 +20,10 @@
   max-width: 260px;
 }
 
-.portfolioHeader > p {
+.portfolioHeader > span {
   flex-shrink: 0;
   /* color: var(--text-02); */
-  margin-top: 5px;
+  margin: 5px 0px;
 }
 
 .portfolioPreviewContent > ul {
@@ -80,15 +80,7 @@
 
 .portfolioPreview[data-open=true] {
   padding-bottom: 48px;
-  max-height: 500px;
-}
-
-.portfolioPreview[data-open=true] > img {
-  max-height: 22vh;
-}
-
-.portfolioPreview[data-open=true] > .overlay {
-  height: 0;
+  max-height: 1500px;
 }
 
 .portfolioPreview[data-open=true] .toggle {

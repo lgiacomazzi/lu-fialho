@@ -23,12 +23,12 @@ const PortfolioLine = ({ portfolio }: PortfolioLineProps) => {
       <div className={styles.portfolioPreviewContent}>
         <div className={styles.portfolioHeader}>
           <h3>{title}</h3>
-          <p className="comment">{date}</p>
+          <span className="comment">{date}</span>
         </div>
         <ul className={styles.portfolioSubtitle}>
           {subtitle && subtitle.map((subtitleItem) => <li>{subtitleItem}</li>)}
         </ul>
-        {isOpen && <PortfolioBody info={info} youtube={youtube} />}
+        {isOpen && <PortfolioBody info={info} youtube={youtube} links={links} />}
       </div>
       <button
         className={styles.toggle}

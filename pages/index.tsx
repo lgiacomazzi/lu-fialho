@@ -1,4 +1,6 @@
 import Intro from "../components/Intro";
+import Navbar from '../components/Navbar';
+import Sidebar from '../components/Sidebar';
 import PortfolioLine from "../components/PortfolioLine";
 import Layout from "../components/Layout";
 import { PortfolioType } from "../types/portfolios";
@@ -19,6 +21,8 @@ export async function getStaticProps() {
 export default function Home({ portfolios }: HomeProps) {
   return (
     <Layout>
+      <Navbar />
+      <Sidebar portfolios={portfolios} />
       <Intro />
       <div id="portfolios" className="container-fluid">
         {portfolios?.map((portfolio) => (

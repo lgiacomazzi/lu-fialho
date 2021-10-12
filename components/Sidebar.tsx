@@ -1,9 +1,11 @@
 import styles from "../styles/components/Navbar.module.css";
 import { NavMenu } from "./Navbar";
+import Link from "next/link"
 import { UserInterfaceContext } from "../contexts/UserInterfaceContext";
 import { motion } from "framer-motion";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Icon from './Icon'
+import { getAllPortfolios } from "../pages/api/portfolios";
 
 const CloseButton = () => {
   const { isMenuOpen, setIsMenuOpen } = useContext(UserInterfaceContext);
@@ -19,20 +21,37 @@ const CloseButton = () => {
   );
 };
 
-const Item = ({ children }) => {
-  return <a className={styles.sidebarItem}><h3>{children}</h3></a>
+const Item = ({ children, url = "/" }) => {
+  return (
+    <Link href={url}>
+      <a className={styles.sidebarItem}>
+        <h2>{children}</h2>
+      </a>
+    </Link>
+  )
 }
 
-const Sidebar = () => {
+const SubItem = ({ portfolio }) => {
+  return (
+    <Link href={portfolio._id}>
+      <a className={styles.sidebarItem}>
+        <h3>_{portfolio.title}</h3>
+      </a>
+    </Link>
+  )
+}
+
+const Sidebar = ({ portfolios }) => {
   const { isMenuOpen, setIsMenuOpen } = useContext(UserInterfaceContext);
 
   return (
     <motion.div className={styles.navbarMenuPage} data-open={isMenuOpen}>
       <CloseButton />
       <Item>Home</Item>
-      <Item>Sobre mim</Item>
-      {/* {portfolios && portfolios.map((portfolio) => <Item>{portfolio.item}</Item>)} */}
-      <Item>Contato</Item>
+      <Item url="/about">Sobre mim</Item>
+      <Item url="/portfolio">Portfolio</Item>
+      {portfolios && portfolios.map((portfolio) => <SubItem portfolio={portfolio} />)}
+      <Item url="/contact">Contato</Item>
     </motion.div>
   );
 };

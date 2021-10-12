@@ -13,10 +13,23 @@ export async function getStaticProps() {
 
 export default function Edit({ portfolios }) {
 
+    async function saveContent(id) {
+
+        console.log(response)
+    }
+
     return (
         <Box>
             SLATE
             <Editor />
-        </Box>
+            {portfolios.map((portfolio) =>
+                <>
+                    <span>{portfolio.title}</span>
+                    <button onClick={() => saveContent(portfolio._id)}
+                    >
+                        Salvar
+                    </button>
+                </>)}
+        </Box >
     )
 }

@@ -2,7 +2,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 32px;
+}
+
+.avatar img {
+  border: 1px solid var(--border-color);
 }
 
 .avatar > :last-child {
@@ -23,7 +26,8 @@
 
 .manifest {
   max-width: 800px;
-  margin-bottom: 48px;
+  margin-top: 24px;
+  margin-bottom: 60px;
 }
 
 .introCTA {
@@ -37,7 +41,8 @@
 }
 
 .blink {
-  animation: blink 0.7s infinite;
+  color: var(--text-02);
+  animation: blink .8s infinite;
 }
 
 @keyframes blink {

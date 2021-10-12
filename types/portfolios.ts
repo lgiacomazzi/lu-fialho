@@ -1,6 +1,8 @@
 export type PortfolioLinkType = {
   text: string;
   url: string;
+  image?: string;
+  info?: string;
 }
 
 export type PortfolioType = {
@@ -8,7 +10,7 @@ export type PortfolioType = {
   subtitle?: string[];
   date: string;
   info: string;
-  image?: string;
-  youtube?: string;
+  image?: string; //Imagem da Capa
+  youtube?: string; //Se tiver link 
   links?: PortfolioLinkType[];
 };

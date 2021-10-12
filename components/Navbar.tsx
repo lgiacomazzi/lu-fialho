@@ -78,11 +78,11 @@ const Navbar = () => {
       <Link href={"/"}>
         <motion.div style={{ opacity: visibility }} initial={{ opacity: 0 }} className={styles.navbarCenter}>
           <h5>Luise Fialho</h5>
-          <p className="comment">Editora e Redatora</p>
+          <span className="comment">Editora e Redatora</span>
         </motion.div>
       </Link>
       <div className={styles.navbarRightSide}>
-        <a href="https://www.linkedin.com/in/luisefialho" target="_blank"><Icon icon="message" size={24}></Icon></a>
+        <Link href={"/contato"}><Icon icon="message" size={24} /></Link>
         <NavMenu />
       </div>
     </motion.div>

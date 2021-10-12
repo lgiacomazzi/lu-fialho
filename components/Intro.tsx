@@ -1,24 +1,14 @@
-import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "../styles/components/Intro.module.css";
 import Icon from "./Icon";
+import Avatar from "./Avatar";
 
 // const transition = { duration: 0.6, ease: [0.65, 0, 0.35, 1] };
 
 const Intro = () => {
   return (
     <div className={styles.intro + " container"}>
-      <motion.div
-        // initial={{ y: -50, x: -50, opacity: 0, scale: 0 }}
-        // animate={{ y: 0, x: 0, opacity: 1, scale: 1 }}
-        className={styles.avatar}
-      >
-        <Image src="/avatar.png" alt="Luise Fialho" width={60} height={60} />
-        <div>
-          <h4>Luise Fialho</h4>
-          <p>Editora e Redatora</p>
-        </div>
-      </motion.div>
+      <Avatar />
       <motion.h1
         // initial={{ opacity: 0 }}
         // animate={{ opacity: 1 }}
