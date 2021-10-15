@@ -17,8 +17,6 @@ const Avatar = ({ size, subtitle = false }: AvatarProps) => {
         }
     }
 
-    console.log(renderSize("p"))
-
     return (
         <div
             className={styles.avatar}

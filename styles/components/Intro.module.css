@@ -24,6 +24,13 @@
   padding-top: 120px; */
 }
 
+.introHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .manifest {
   max-width: 800px;
   margin-top: 24px;
@@ -56,9 +63,7 @@
 
 @media (max-width: 768px) {
   .intro {
-    padding-top: 16px;
-    padding-bottom: 32px;
-
+    padding: 24px;
     justify-content: space-between;
 
     /* height: 70vh;

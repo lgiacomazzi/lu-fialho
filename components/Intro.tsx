@@ -2,13 +2,17 @@ import { motion } from "framer-motion";
 import styles from "../styles/components/Intro.module.css";
 import Icon from "./Icon";
 import Avatar from "./Avatar";
+import { BurgerMenu } from "./Navbar";
 
 // const transition = { duration: 0.6, ease: [0.65, 0, 0.35, 1] };
 
 const Intro = () => {
   return (
     <div className={styles.intro + " container"}>
-      <Avatar />
+      <div className={styles.introHeader}>
+        <Avatar subtitle />
+        <BurgerMenu />
+      </div>
       <motion.h1
         // initial={{ opacity: 0 }}
         // animate={{ opacity: 1 }}

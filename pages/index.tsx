@@ -21,10 +21,9 @@ export async function getStaticProps() {
 export default function Home({ portfolios }: HomeProps) {
   return (
     <Layout>
-      <Navbar />
       <Sidebar portfolios={portfolios} />
       <Intro />
-      <div id="portfolios" className="container-fluid">
+      <div id="portfolios" className="container">
         {portfolios?.map((portfolio) => (
           <PortfolioLine portfolio={portfolio} />
         ))}
