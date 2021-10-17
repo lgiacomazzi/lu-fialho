@@ -6,6 +6,7 @@ import Layout from "../components/Layout";
 import { PortfolioType } from "../types/portfolios";
 import { getAllPortfolios } from "./api/portfolios";
 import About from "../components/About"
+import Contact from "../components/Contact"
 
 type HomeProps = {
   portfolios: PortfolioType[];
@@ -30,6 +31,7 @@ export default function Home({ portfolios }: HomeProps) {
         ))}
       </div>
       <About />
+      <Contact />
     </Layout>
   );
 }

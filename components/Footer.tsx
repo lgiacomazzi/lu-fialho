@@ -16,21 +16,7 @@ const User = () => {
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
-      <div className="container">
-        <p>
-          Luise Fialho
-        </p>
-        <p>
-          Editora e Redatora
-        </p>
-        <Link href="/contato">
-          <a>
-            CONTATO <br /> 2021©
-          </a>
-        </Link>
-        <User />
-      </div>
+    <footer className={styles.footer + " container"}>
     </footer>
   );
 };

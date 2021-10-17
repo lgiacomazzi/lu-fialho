@@ -1,25 +1,13 @@
 .footer {
   width: 100%;
-  display: none;
-  /* display: flex; */
+  display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 12px 24px 16px;
+
+  background-color: var(--ui-dark);
+  color: var(--text-invert);
 }
 
 @media (max-width: 768px) {
-  .footer {
-    background-color: var(--ui-dark);
-    color: var(--text-invert);
 
-    position: fixed;
-    left: 0px;
-    bottom: 0px;
-
-    z-index: 2;
-  }
-
-  .footer > .container > * {
-    flex-grow: 1;
-  }
 }

@@ -7,6 +7,8 @@
 
   overflow: hidden;
   transition: 1000ms;
+
+  cursor: url("/svg/pointer.svg") 4 1, auto;
 }
 
 .portfolioHeader {
@@ -16,6 +18,10 @@
   justify-content: space-between;
 
   margin-bottom: 8px
+}
+
+.portfolioPreview:hover h3 {
+  text-decoration: underline;
 }
 
 .portfolioHeader > h3 {
@@ -33,17 +39,6 @@
   padding-inline-start: 10px;
   font-size: 14px;
 }
-
-/* .portfolioPreview > .overlay {
-  background: linear-gradient(0deg, white, 70%, #ffffff00);
-  position: absolute;
-  height: 50px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  transition: 1000ms;
-} */
-
 
 .portfolioPreview > img {
   /* max-height: 12vh; */

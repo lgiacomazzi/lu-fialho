@@ -61,13 +61,9 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .intro {
-    padding: 24px;
-    justify-content: space-between;
-
-    /* height: 70vh;
-    min-height: 70vh;
-    min-height: -webkit-fill-available; */
+    height: 100vh;
+    padding: 48px 24px;
   }
 }

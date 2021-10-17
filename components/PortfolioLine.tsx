@@ -17,18 +17,23 @@ const PortfolioLine = ({ portfolio }: PortfolioLineProps) => {
     <div
       className={styles.portfolioPreview}
       data-open={isOpen}
-      onClick={() => setIsOpen(!isOpen)}
     >
-      {image && <img src={`/portfolio/${image}`} alt="Luise Fialho" width="100%" />}
+      {image &&
+        <img
+          onClick={() => setIsOpen(true)}
+          src={`/portfolio/${image}`}
+          alt={portfolio.title}
+          width="100%" />}
 
       <div className={styles.portfolioPreviewContent}>
         <div className={styles.portfolioHeader}>
-          <h3>{title}</h3>
+          <h3 onClick={() => setIsOpen(true)}>{title}</h3>
           <span className="comment">{date}</span>
         </div>
         <ul className={styles.portfolioSubtitle}>
           {subtitle && subtitle.map((subtitleItem) => <li>{subtitleItem}</li>)}
         </ul>
+
         {isOpen && <PortfolioBody info={info} youtube={youtube} links={links} />}
       </div>
       <button

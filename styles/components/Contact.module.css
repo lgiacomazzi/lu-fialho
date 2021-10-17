@@ -1,0 +1,24 @@
+.contactHeader {
+    border-top: 1px solid var(--border-color);
+    padding-top: 16px;
+    margin-bottom: 24px
+}
+
+.contactLink {
+    display: block;
+    margin-bottom: 24px;
+}
+
+.contactLink:hover {
+    text-decoration: underline;
+}
+
+.contactLinkHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.contactLinkHeader > h5 {
+    margin-right: 4px;
+}
