@@ -17,6 +17,7 @@ const PortfolioLine = ({ portfolio }: PortfolioLineProps) => {
     <div
       className={styles.portfolioPreview}
       data-open={isOpen}
+      onClick={() => setIsOpen(!isOpen)}
     >
       {image && <img src={`/portfolio/${image}`} alt="Luise Fialho" width="100%" />}
 
@@ -32,7 +33,6 @@ const PortfolioLine = ({ portfolio }: PortfolioLineProps) => {
       </div>
       <button
         className={styles.toggle}
-        onClick={() => setIsOpen(!isOpen)}
       >
         <Icon icon="close" size={20} />
       </button>

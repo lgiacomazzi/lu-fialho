@@ -5,6 +5,7 @@ import PortfolioLine from "../components/PortfolioLine";
 import Layout from "../components/Layout";
 import { PortfolioType } from "../types/portfolios";
 import { getAllPortfolios } from "./api/portfolios";
+import About from "../components/About"
 
 type HomeProps = {
   portfolios: PortfolioType[];
@@ -28,6 +29,7 @@ export default function Home({ portfolios }: HomeProps) {
           <PortfolioLine portfolio={portfolio} />
         ))}
       </div>
+      <About />
     </Layout>
   );
 }

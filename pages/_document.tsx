@@ -7,6 +7,12 @@ export default class MyDocument extends Document {
         <Head>
           <link
             rel="preload"
+            href="/fonts/BigCaslon-Bold.ttf"
+            as="font"
+            type="font/ttf"
+          />
+          <link
+            rel="preload"
             href="/fonts/BigCaslon-Regular.ttf"
             as="font"
             type="font/ttf"

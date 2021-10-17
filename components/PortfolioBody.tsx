@@ -20,7 +20,6 @@ const PortfolioLink = ({ link }) => {
   )
 }
 const PortfolioBody = ({ info, youtube, links }: PortfolioBodyProps) => {
-  console.log(links)
   return (
     <div className={styles.portfolioBody}>
       <p>{info}</p>
