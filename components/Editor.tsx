@@ -2,11 +2,10 @@ import { useMemo, useState, useCallback } from 'react'
 import { createEditor, Descendant } from 'slate'
 import { Slate, Editable, withReact } from 'slate-react'
 
-
 const Element = ({ attributes, children, element }) => {
   switch (element.type) {
-    case 'block-quote':
-      return <blockquote {...attributes}>{children}</blockquote>
+    case 'link':
+      return <a {...attributes} href={element.url}>{children}</a>
     case 'bulleted-list':
       return <ul {...attributes}>{children}</ul>
     case 'heading-one':
@@ -54,6 +53,7 @@ const Editor = () => {
       value={value}
       onChange={value => {
         setValue(value)
+        console.log(JSON.stringify(value))
       }}
     >
       <Editable

@@ -7,6 +7,11 @@
 .contactLink {
     display: block;
     margin-bottom: 24px;
+    text-decoration: none;
+}
+
+.contactLink h5 {
+    text-decoration: underline;
 }
 
 .contactLink:hover {

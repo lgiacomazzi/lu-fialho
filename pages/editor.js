@@ -1,5 +1,6 @@
 import Box from '../components/Box'
 import Editor from "../components/Editor"
+import PasteHtmlExample from "../components/PasteHTMLExample"
 import { getAllPortfolios } from './api/portfolios';
 
 
@@ -21,7 +22,7 @@ export default function Edit({ portfolios }) {
     return (
         <Box>
             SLATE
-            <Editor />
+            <PasteHtmlExample />
             {portfolios.map((portfolio) =>
                 <>
                     <span>{portfolio.title}</span>

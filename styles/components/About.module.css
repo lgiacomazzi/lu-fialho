@@ -3,12 +3,13 @@
     padding-top: 16px;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column-reverse;
     justify-content: space-between;
     align-items: flex-start;
 }
 
 .aboutHeader > img {
-    width: 120px;
+    width: 50vw;
     max-width: 100vw;
+    margin-bottom: 16px;
 }

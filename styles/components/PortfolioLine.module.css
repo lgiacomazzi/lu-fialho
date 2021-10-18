@@ -7,8 +7,6 @@
 
   overflow: hidden;
   transition: 1000ms;
-
-  cursor: url("/svg/pointer.svg") 4 1, auto;
 }
 
 .portfolioHeader {

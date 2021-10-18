@@ -17,7 +17,7 @@ export default async function (req, res) {
     const update = req.body;
     const portfolio = await db.collection("portfolios").findOneAndUpdate(query, { $set: update });
 
-    return res.json("ok");
+    return res.json(portfolio);
 
   } else {
     const portfolio = await db.collection("portfolios").findOne(query, projection);

@@ -16,6 +16,14 @@ const ContactLink = ({ children, name, url }) => {
     )
 }
 
+const ContactForm = () => {
+    return (
+        <>
+
+        </>
+    )
+}
+
 const Contact = () => {
     return (
         <div className="container">
@@ -28,6 +36,7 @@ const Contact = () => {
             <ContactLink name="Linkedin" url="https://linkedin.com/in/luisefialho">linkedin.com/in/luisefialho</ContactLink>
             <ContactLink name="Medium" url="https://luisef.medium.com">luisef.medium.com</ContactLink>
             <p>Se preferir, envie sua mensagem por aqui mesmo.</p>
+            <ContactForm />
         </div>
     )
 }
