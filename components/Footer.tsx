@@ -17,7 +17,6 @@ const User = () => {
 
 const Footer = () => {
   const { portfolios } = useContext(PortfoliosContext)
-  console.log("Footer", portfolios)
 
   return (
     <footer className={styles.footer}>

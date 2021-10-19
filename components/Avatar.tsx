@@ -2,21 +2,10 @@ import Image from "next/image";
 import styles from "../styles/components/Intro.module.css";
 
 type AvatarProps = {
-    size?: string;
-    subtitle?: boolean;
+    size?: number;
 }
 
-const Avatar = ({ size, subtitle = false }: AvatarProps) => {
-
-    function renderSize(size) {
-        switch (size) {
-            case "p":
-                return { image: 32, text: "h3" }
-            default:
-                return { image: 48, text: "h4" }
-        }
-    }
-
+const Avatar = ({ size = 60 }: AvatarProps) => {
     return (
         <div
             className={styles.avatar}
@@ -25,11 +14,12 @@ const Avatar = ({ size, subtitle = false }: AvatarProps) => {
                 priority
                 src="/avatar.png"
                 alt="Luise Fialho"
-                width={renderSize(size).image}
-                height={renderSize(size).image} />
+                width={size}
+                height={size}
+                objectFit="cover" />
             <div>
-                <h4>Luise Fialho</h4>
-                {subtitle && <span className="comment">Editora e Redatora</span>}
+                <h3>Luise Fialho</h3>
+                <span>Editora e Redatora</span>
             </div>
         </div>)
 }

@@ -1,14 +1,16 @@
 import styled from "styled-components";
 import { space, position } from 'styled-system'
+import { variant } from 'styled-system'
 
 const Button = styled.button`
-    ${space}
-    ${position}
+    ${space};
+    ${position};
     display: flex;
     align-items: center;
     justify-content: center;
 
-    font-size: 14px;
+    font-family: inherit;
+    font-size: inherit;
     font-weight: bold;
 
     border: none;
@@ -19,6 +21,12 @@ const Button = styled.button`
     color: white;
     background-color: var(--interactive-dark); 
 `;
+
+export const OutlineButton = styled(Button)`
+    background: var(--ui-light);
+    color: var(--interactive-dark);
+    border: 1px solid var(--interactive-dark);
+`
 
 export const RoundButton = styled(Button)`
     border-radius: 100px;

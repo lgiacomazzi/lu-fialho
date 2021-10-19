@@ -4,8 +4,12 @@
   align-items: center;
 }
 
+.avatar img {
+  border-radius: 100px;
+}
+
 .avatar > :last-child {
-  margin-left: 12px
+  margin-left: .5em
 }
 
 .intro {
@@ -14,7 +18,7 @@
   justify-content: flex-start;
   align-items: flex-start;
 
-  min-height: 60vh;
+  min-height: 80vh;
 }
 
 .introHeader {
@@ -26,18 +30,8 @@
 
 .manifest {
   max-width: 800px;
-  margin-top: 24px;
-  margin-bottom: 60px;
-}
-
-.introCTA {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-}
-
-.introCTA > * {
-  margin-right: 8px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .blink {
