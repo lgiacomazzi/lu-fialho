@@ -40,6 +40,10 @@ const serialize = node => {
   const children = map_obj.map(n => serialize(n)).join('')
 
   switch (node.type) {
+    case 'heading-two':
+      return `<h2>${children}</h2>`
+    case 'heading-three':
+      return `<h3>${children}</h3>`
     case 'paragraph':
       return `<p>${children}</p>`
     case 'link':

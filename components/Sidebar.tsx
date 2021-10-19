@@ -1,6 +1,7 @@
 import styles from "../styles/components/Navbar.module.css";
 import { NavMenu } from "./Navbar";
 import Link from "next/link"
+import { PortfoliosContext } from "../contexts/PortfoliosContext";
 import { UserInterfaceContext } from "../contexts/UserInterfaceContext";
 import { motion } from "framer-motion";
 import { useContext, useEffect } from "react";
@@ -41,8 +42,9 @@ const SubItem = ({ portfolio }) => {
   )
 }
 
-const Sidebar = ({ portfolios }) => {
+const Sidebar = () => {
   const { isMenuOpen, setIsMenuOpen } = useContext(UserInterfaceContext);
+  const { portfolios } = useContext(PortfoliosContext)
 
   return (
     <motion.div className={styles.navbarMenuPage} data-open={isMenuOpen}>

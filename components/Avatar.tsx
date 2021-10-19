@@ -22,6 +22,7 @@ const Avatar = ({ size, subtitle = false }: AvatarProps) => {
             className={styles.avatar}
         >
             <Image
+                priority
                 src="/avatar.png"
                 alt="Luise Fialho"
                 width={renderSize(size).image}

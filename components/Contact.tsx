@@ -1,5 +1,7 @@
 import Link from "next/link"
+import { useState } from "react";
 import styles from "../styles/components/Contact.module.css";
+import Button from "./Button";
 import Icon from "./Icon";
 
 const ContactLink = ({ children, name, url }) => {
@@ -15,12 +17,34 @@ const ContactLink = ({ children, name, url }) => {
         </Link>
     )
 }
+const ButtonFix = ({ children, onClick }) => {
+    return (
+        <button className="btn" onClick={onClick}>{children}</button>
+    )
+}
 
 const ContactForm = () => {
-    return (
-        <>
+    const [data, setData] = useState({});
 
-        </>
+    const handleChange = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        setData(values => ({ ...values, [name]: value }))
+        console.log(data)
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        alert("Obrigado pela sua mensagem! :)");
+    }
+
+    return (
+        <form>
+            <input type="text" name="name" placeholder="Seu nome" onChange={handleChange} />
+            <input type="mail" name="mail" placeholder="Seu e-mail" onChange={handleChange} />
+            <textarea name="message" placeholder="Sua mensagem" onChange={handleChange} />
+            <ButtonFix onClick={handleSubmit}>Enviar</ButtonFix>
+        </form>
     )
 }
 

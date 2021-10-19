@@ -6,6 +6,7 @@ export type PortfolioLinkType = {
 }
 
 export type PortfolioType = {
+  _id: string;
   title: string;
   subtitle?: string[];
   date: string;

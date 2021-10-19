@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Image from "next/image"
 import PortfolioBody from "../components/PortfolioBody";
 import { PortfolioType } from "../types/portfolios";
 import Icon from "./Icon";
@@ -19,11 +20,14 @@ const PortfolioLine = ({ portfolio }: PortfolioLineProps) => {
       data-open={isOpen}
     >
       {image &&
-        <img
-          onClick={() => setIsOpen(true)}
-          src={`/portfolio/${image}`}
-          alt={portfolio.title}
-          width="100%" />}
+        <div className={styles.portfolioImage}>
+          <Image
+            onClick={() => setIsOpen(true)}
+            src={`/portfolio/${image}`}
+            alt={portfolio.title}
+            layout="fill"
+            objectFit="cover" />
+        </div>}
 
       <div className={styles.portfolioPreviewContent}>
         <div className={styles.portfolioHeader}>
@@ -33,15 +37,17 @@ const PortfolioLine = ({ portfolio }: PortfolioLineProps) => {
         <ul className={styles.portfolioSubtitle}>
           {subtitle && subtitle.map((subtitleItem) => <li>{subtitleItem}</li>)}
         </ul>
-
-        {isOpen && <PortfolioBody info={info} youtube={youtube} links={links} />}
       </div>
+
+      {isOpen && <PortfolioBody info={info} youtube={youtube} links={links} />}
+
       <button
         className={styles.toggle}
+        onClick={() => setIsOpen(!isOpen)}
       >
         <Icon icon="close" size={20} />
       </button>
-      <div className={styles.overlay} />
+
     </div>
   );
 };

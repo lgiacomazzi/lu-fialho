@@ -1,11 +1,19 @@
 .footer {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
 
   background-color: var(--ui-dark);
   color: var(--text-invert);
+}
+
+.footerHeader {
+  width: 100%;
+}
+
+.footerBody {
+  width: 100%;
 }
 
 @media (max-width: 768px) {
