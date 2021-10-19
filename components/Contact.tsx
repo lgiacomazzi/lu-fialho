@@ -52,6 +52,7 @@ const Contact = () => {
     return (
         <div className="container">
             <div className={styles.contactHeader}>
+                <Icon icon="mail" size={24} />
                 <h2>Contato</h2>
             </div>
             <p>Vamos conversar?</p>

@@ -1,11 +1,19 @@
 .contactHeader {
-    margin-bottom: 24px
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.contactHeader h2 {
+    margin-left: .25em;
 }
 
 .contactLink {
     display: block;
-    margin-bottom: 24px;
+    margin-bottom: 1.5em;
     text-decoration: none;
+    width: fit-content;
 }
 
 .contactLink h5 {
@@ -23,5 +31,5 @@
 }
 
 .contactLinkHeader > h5 {
-    margin-right: 4px;
+    margin-right: .25em;
 }

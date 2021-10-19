@@ -8,9 +8,13 @@ const Button = styled.button`
     align-items: center;
     justify-content: center;
 
+    font-size: 14px;
+    font-weight: bold;
+
     border: none;
-    height: 32px;
-    min-width: 32px;
+    border-radius: 100px;
+    
+    padding: 10px 20px;
 
     color: white;
     background-color: var(--interactive-dark); 

@@ -4,10 +4,6 @@
   align-items: center;
 }
 
-.avatar img {
-  border: 1px solid var(--border-color);
-}
-
 .avatar > :last-child {
   margin-left: 12px
 }
@@ -17,11 +13,8 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-/* 
-  height: 100vh;
-  min-height: 600px;
 
-  padding-top: 120px; */
+  min-height: 60vh;
 }
 
 .introHeader {
