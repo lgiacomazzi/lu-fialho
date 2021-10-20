@@ -14,6 +14,36 @@
 
 .footerBody {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 48px;
+}
+
+.footerBody > div {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 50%;
+}
+
+.footerItem {
+  padding: 10px 0px;
+  text-decoration: none;
+  font-size: 22px;
+  border-bottom: 1px solid;
+  font-weight: bold;
+}
+
+.portfolioLinks .footerItem {
+  font-weight: inherit;
+  font-size: 20px;
+  color: var(--text-02);
+  column-gap: 10px;
+  display: flex;
+}
+
+.portfolioLinks img {
+  filter: invert(1)
 }
 
 @media (max-width: 768px) {
