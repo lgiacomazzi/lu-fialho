@@ -1,9 +1,8 @@
-import { useContext } from "react";
 import Head from "next/head";
+import { useContext } from "react";
 import Intro from "../components/Intro";
-import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
-import PortfolioLine from "../components/PortfolioLine";
+import Portfolios from "../components/Portfolios";
 import Layout from "../components/Layout";
 import About from "../components/About"
 import Contact from "../components/Contact"
@@ -27,22 +26,19 @@ export async function getStaticProps() {
 
 export default function Home({ portfolios }: HomeProps) {
   const { setPortfolios } = useContext(PortfoliosContext);
-  console.log(Array.isArray(portfolios))
   setPortfolios(portfolios);
 
   return (
     <Layout home>
       <Head>
-        <title>Luise Fialho | Portfólio</title>
+        <title>Luise Fialho | Editora e redatora</title>
+        <meta
+          name="description"
+          content="Projetos editoriais - Redação - Leitura crítica - Produção de conteúdo" />
       </Head>
       <Sidebar />
       <Intro />
-      <div id="portfolios" className="container">
-        <h2>Portfólio</h2>
-        {portfolios?.map((portfolio) => (
-          <PortfolioLine portfolio={portfolio} />
-        ))}
-      </div>
+      <Portfolios />
       <About />
       <Contact />
     </Layout>

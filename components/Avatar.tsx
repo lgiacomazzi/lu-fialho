@@ -3,20 +3,21 @@ import styles from "../styles/components/Intro.module.css";
 
 type AvatarProps = {
     size?: number;
+    picture?: boolean;
 }
 
-const Avatar = ({ size = 60 }: AvatarProps) => {
+const Avatar = ({ picture = true, size = 60 }: AvatarProps) => {
     return (
         <div
             className={styles.avatar}
         >
-            <Image
+            {picture && <Image
                 priority
                 src="/avatar.png"
                 alt="Luise Fialho"
                 width={size}
                 height={size}
-                objectFit="cover" />
+                objectFit="cover" />}
             <div>
                 <h3>Luise Fialho</h3>
                 <span>Editora e Redatora</span>

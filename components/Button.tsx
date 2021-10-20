@@ -1,10 +1,11 @@
 import styled from "styled-components";
-import { space, position } from 'styled-system'
+import { space, position, zIndices } from 'styled-system'
 import { variant } from 'styled-system'
 
 const Button = styled.button`
     ${space};
     ${position};
+    ${zIndices};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,11 +16,11 @@ const Button = styled.button`
 
     border: none;
     border-radius: 100px;
-    
+
     padding: 10px 20px;
 
     color: white;
-    background-color: var(--interactive-dark); 
+    background-color: var(--interactive-dark);
 `;
 
 export const OutlineButton = styled(Button)`
@@ -30,9 +31,10 @@ export const OutlineButton = styled(Button)`
 
 export const RoundButton = styled(Button)`
     border-radius: 100px;
+    padding: 0px;
     height: 32px;
     width: 32px;
-    
+
     > img {
         filter: invert(1);
     }

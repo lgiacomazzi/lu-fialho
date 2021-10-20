@@ -1,0 +1,29 @@
+.sidebar {
+  padding: 48px 24px;
+  position: fixed;
+  width: 90vw;
+  height: 100vh;
+  overflow: scroll;
+  top: 0;
+  right: -100vw;
+
+  background: var(--ui-light);
+  color: var(--text-01);
+  border-left: 1px solid var(--border-color);
+  z-index: 1000;
+
+  transition: 400ms;
+}
+
+.sidebar[data-open=true] {
+  transform: translateX(-100vw);
+}
+
+.sidebarItem {
+  padding: 10px 20px;
+  display: block;
+  border-bottom: 1px solid var(--border-color);
+  text-decoration: none;
+
+  font-size: 20px;
+}

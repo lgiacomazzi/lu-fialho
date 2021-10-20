@@ -1,32 +1,33 @@
-import styles from "../styles/components/Navbar.module.css";
-import { NavMenu } from "./Navbar";
+import { useContext } from "react";
 import Link from "next/link"
+import { useRouter } from 'next/router'
+import { motion } from "framer-motion";
+
+import Icon from './Icon'
+import { RoundButton } from "./Button";
+import styles from "../styles/components/Sidebar.module.css";
 import { PortfoliosContext } from "../contexts/PortfoliosContext";
 import { UserInterfaceContext } from "../contexts/UserInterfaceContext";
-import { motion } from "framer-motion";
-import { useContext, useEffect } from "react";
-import Icon from './Icon'
-import { getAllPortfolios } from "../pages/api/portfolios";
 
 const CloseButton = () => {
   const { isMenuOpen, setIsMenuOpen } = useContext(UserInterfaceContext);
 
   return (
-    <motion.button
-      whileTap={{ scale: 0.8 }}
-      onClick={() => setIsMenuOpen(!isMenuOpen)}
-      className={styles.sidebarCloseButton}
-    >
-      <Icon icon="close" size={28}></Icon>
-    </motion.button>
-  );
+    <RoundButton
+      position="absolute"
+      top={24}
+      right={24}
+      zIndex={1000}
+      onClick={() => setIsMenuOpen(!isMenuOpen)}>
+      <Icon icon="close" size={20} />
+    </RoundButton>)
 };
 
 const Item = ({ children, url = "/" }) => {
   return (
     <Link href={url}>
       <a className={styles.sidebarItem}>
-        <h2>{children}</h2>
+        <span>{children}</span>
       </a>
     </Link>
   )
@@ -45,15 +46,16 @@ const SubItem = ({ portfolio }) => {
 const Sidebar = () => {
   const { isMenuOpen, setIsMenuOpen } = useContext(UserInterfaceContext);
   const { portfolios } = useContext(PortfoliosContext)
-
+  const router = useRouter();
+  console.log(router)
   return (
-    <motion.div className={styles.navbarMenuPage} data-open={isMenuOpen}>
+    <motion.div className={styles.sidebar} data-open={isMenuOpen}>
       <CloseButton />
-      <Item>Home</Item>
+      <Item url="/">Home</Item>
       <Item url="/about">Sobre mim</Item>
+      <Item url="/contact">Contato</Item>
       <Item url="/portfolio">Portfolio</Item>
       {portfolios && portfolios.map((portfolio) => <SubItem portfolio={portfolio} />)}
-      <Item url="/contact">Contato</Item>
     </motion.div>
   );
 };
