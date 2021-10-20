@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import { getAllPortfolios } from "../pages/api/portfolios";
 import { PortfolioType } from "../types/portfolios";
 
 type PortfolioContextProps = {

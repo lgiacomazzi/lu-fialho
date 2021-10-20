@@ -1,7 +1,6 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Link from "next/link"
 import { useRouter } from 'next/router'
-import { motion } from "framer-motion";
 
 import Icon from './Icon'
 import { RoundButton } from "./Button";
@@ -24,9 +23,13 @@ const CloseButton = () => {
 };
 
 const Item = ({ children, url = "/" }) => {
+  const { pathname } = useRouter();
   return (
     <Link href={url}>
-      <a className={styles.sidebarItem}>
+      <a
+        className={styles.sidebarItem}
+        data-active={pathname === url}
+      >
         <span>{children}</span>
       </a>
     </Link>
@@ -46,17 +49,21 @@ const SubItem = ({ portfolio }) => {
 const Sidebar = () => {
   const { isMenuOpen, setIsMenuOpen } = useContext(UserInterfaceContext);
   const { portfolios } = useContext(PortfoliosContext)
-  const router = useRouter();
-  console.log(router)
+
+  useEffect(() => setIsMenuOpen(false), []) //fechar quando clicar
+
   return (
-    <motion.div className={styles.sidebar} data-open={isMenuOpen}>
+    <div className={styles.sidebar} data-open={isMenuOpen}>
       <CloseButton />
       <Item url="/">Home</Item>
       <Item url="/about">Sobre mim</Item>
       <Item url="/contact">Contato</Item>
       <Item url="/portfolio">Portfolio</Item>
       {portfolios && portfolios.map((portfolio) => <SubItem portfolio={portfolio} />)}
-    </motion.div>
+      <div className={styles.sidebarFooter}>
+        <p>Copyright © Luise Fialho, 2021</p>
+      </div>
+    </div>
   );
 };
 

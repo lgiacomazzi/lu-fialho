@@ -16,7 +16,7 @@ type HomeProps = {
   portfolios: PortfolioType[];
 };
 
-export async function getStaticProps() {
+async function getStaticProps() {
   const portfolios = await getAllPortfolios();
 
   return {
@@ -24,7 +24,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ portfolios }: HomeProps) {
+function Home({ portfolios }: HomeProps) {
   const { setPortfolios } = useContext(PortfoliosContext);
   setPortfolios(portfolios);
 
@@ -36,7 +36,6 @@ export default function Home({ portfolios }: HomeProps) {
           name="description"
           content="Projetos editoriais - Redação - Leitura crítica - Produção de conteúdo" />
       </Head>
-      <Sidebar />
       <Intro />
       <Portfolios />
       <About />
@@ -44,3 +43,5 @@ export default function Home({ portfolios }: HomeProps) {
     </Layout>
   );
 }
+
+export { Home as default, getStaticProps }

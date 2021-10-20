@@ -4,6 +4,7 @@ import Icon from "./Icon"
 import Router from 'next/router'
 import { RoundButton } from "./Button";
 import Navbar from "./Navbar";
+import Sidebar from "./Sidebar";
 
 const BackButton = () => {
     return (
@@ -21,6 +22,7 @@ const Layout = ({ children, home = false }) => {
     return (
         <Box>
             {!home && <Navbar />}
+            <Sidebar />
             {children}
             <Footer />
         </Box>

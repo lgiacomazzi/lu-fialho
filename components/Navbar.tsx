@@ -68,7 +68,7 @@ const Navbar = () => {
     <motion.div
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 1 }}
       className={styles.navbar}
     >
 
