@@ -14,8 +14,8 @@ const CloseButton = () => {
   return (
     <RoundButton
       position="absolute"
-      top={24}
-      right={24}
+      top={20}
+      right={20}
       zIndex={1000}
       onClick={() => setIsMenuOpen(!isMenuOpen)}>
       <Icon icon="close" size={20} />
@@ -63,6 +63,7 @@ const Sidebar = () => {
       <div className={styles.sidebarFooter}>
         <p>Copyright © Luise Fialho, 2021</p>
       </div>
+      <div className={styles.overlay} />
     </div>
   );
 };

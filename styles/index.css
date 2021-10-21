@@ -246,7 +246,22 @@ a:hover, button:hover, .btn:hover {
   margin-bottom: 0px;
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2999;
+
+  background: var(--ui-dark);
+}
+
 @media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
   h1 { 
     font-size: 12vw;
   }

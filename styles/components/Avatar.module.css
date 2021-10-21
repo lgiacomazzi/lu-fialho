@@ -1,0 +1,27 @@
+.avatar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 1em;
+}
+
+.avatar img {
+  max-width: 16vw;
+  max-height: 16vw;
+  border-radius: 100px;
+}
+.avatar .avatarName {
+  display: flex;
+  flex-direction: column;
+}
+.avatar .avatarTitle {
+  font-size: 16px;
+  font-weight: lighter;
+  font-family: "Big Caslon", serif;
+  text-decoration: none;
+}
+
+.avatar .avatarSubtitle {
+  font-size: 13px;
+  text-decoration: none;
+}

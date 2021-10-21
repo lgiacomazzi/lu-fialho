@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "../styles/components/Intro.module.css";
+import styles from "../styles/components/Avatar.module.css";
 
 type AvatarProps = {
     size?: number;
@@ -18,9 +18,9 @@ const Avatar = ({ picture = true, size = 60 }: AvatarProps) => {
                 width={size}
                 height={size}
                 objectFit="cover" />}
-            <div>
-                <h3>Luise Fialho</h3>
-                <span>Editora e Redatora</span>
+            <div className={styles.avatarName}>
+                <span className={styles.avatarTitle}>Luise Fialho</span>
+                <span className={styles.avatarSubtitle}>Editora e Redatora</span>
             </div>
         </div>)
 }

@@ -66,14 +66,13 @@ const Navbar = () => {
 
   return (
     <motion.div
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 1 }}
       className={styles.navbar}
     >
 
       <Link href={"/"}>
-        <Avatar picture={false} />
+        <a>
+          <Avatar picture={false} />
+        </a>
       </Link>
       <div className={styles.navbarRightSide}>
         <OutlineButton href="/contact">Contato</OutlineButton>

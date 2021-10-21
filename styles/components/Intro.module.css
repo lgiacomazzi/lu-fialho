@@ -1,21 +1,11 @@
-.avatar {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  column-gap: 1em;
-}
-
-.avatar img {
-  border-radius: 100px;
-}
-
 .intro {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 
-  min-height: 80vh;
+  height: 80vh;
+  min-height: 460px;
 }
 
 .introHeader {
