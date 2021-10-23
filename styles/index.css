@@ -210,6 +210,7 @@ input, textarea {
 
   border: none;
   border-radius: 0px;
+  background-color: var(--ui-light);
   border-bottom: 1px solid var(--border-color);
 
   width: 260px;

@@ -49,7 +49,7 @@ const Footer = () => {
           <div className={styles.portfolioLinks}>
             {portfolios && portfolios.map((portfolio) =>
               <Item url="/portfolio">
-                <Icon icon="folder" />{portfolio.title}
+                <Icon icon="arrow_right" size={20} />{portfolio.title}
               </Item>)}
           </div>
         </div>
