@@ -41,12 +41,12 @@ const PortfolioLine = ({ portfolio }: PortfolioLineProps) => {
 
       {isOpen && <PortfolioBody info={info} youtube={youtube} links={links} />}
 
-      <button
+      {/* <button
         className={styles.toggle}
         onClick={() => setIsOpen(!isOpen)}
       >
         <Icon icon="close" size={20} />
-      </button>
+      </button> */}
 
     </div>
   );

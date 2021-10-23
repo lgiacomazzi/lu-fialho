@@ -39,8 +39,9 @@ const Item = ({ children, url = "/" }) => {
 const SubItem = ({ portfolio }) => {
   return (
     <Link href={portfolio._id}>
-      <a className={styles.sidebarItem}>
-        <h3>_{portfolio.title}</h3>
+      <a className={styles.sidebarSubItem}>
+        <Icon icon="arrow_right" size={20} />
+        <span>{portfolio.title}</span>
       </a>
     </Link>
   )

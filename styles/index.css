@@ -1,4 +1,12 @@
 @font-face {
+  font-family: "Ogg";
+  src: url("/fonts/Ogg-Regular.ttf");
+  font-style: regular;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Big Caslon";
   src: url("/fonts/BigCaslon-Regular.ttf");
   font-style: regular;
@@ -124,33 +132,37 @@ h1 {
   font-size: 48px;
   font-weight: lighter;
   line-height: 1.1em;
-  font-family: "Big Caslon", serif; 
+  font-family: "Ogg", serif; 
 }
 
 h2 {
   font-size: 32px;
   font-weight: lighter;
   font-style: italic;
-  font-family: "Big Caslon", serif;
+  font-family: "Ogg", serif; 
+  /* font-family: "Big Caslon", serif; */
   margin-bottom: .5em;
 }
 
 h3 {
   font-size: 24px;
   font-weight: lighter;
-  font-family: "Big Caslon", serif;
+  font-family: "Ogg", serif; 
+  /* font-family: "Big Caslon", serif; */
 }
 
 h4 {
   font-size: 20px;
   font-weight: bold;
-  font-family: "Big Caslon", serif;
+  font-family: "Ogg", serif; 
+  /* font-family: "Big Caslon", serif; */
 }
 
 h5 {
   font-size: 18px;
   font-weight: bold;
-  font-family: "Big Caslon", serif;
+  font-family: "Ogg", serif; 
+  /* font-family: "Big Caslon", serif; */
 }
 
 h6 {
