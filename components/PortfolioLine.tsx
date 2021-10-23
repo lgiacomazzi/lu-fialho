@@ -19,6 +19,9 @@ const PortfolioLine = ({ portfolio }: PortfolioLineProps) => {
       className={styles.portfolioPreview}
       data-open={isOpen}
     >
+
+      <div className={styles.portfolioDate}>{date}</div>
+
       {image &&
         <div className={styles.portfolioImage}>
           <Image
@@ -29,15 +32,14 @@ const PortfolioLine = ({ portfolio }: PortfolioLineProps) => {
             objectFit="cover" />
         </div>}
 
-      <div className={styles.portfolioPreviewContent}>
-        <div className={styles.portfolioHeader}>
-          <h3 onClick={() => setIsOpen(true)}>{title}</h3>
-          <span className="comment">{date}</span>
-        </div>
-        <ul className={styles.portfolioSubtitle}>
-          {subtitle && subtitle.map((subtitleItem) => <li>{subtitleItem}</li>)}
-        </ul>
+      <div className={styles.portfolioHeader}>
+        <h3 onClick={() => setIsOpen(true)}>{title}</h3>
       </div>
+
+      <ul className={styles.portfolioSubtitle}>
+        {subtitle && subtitle.map((subtitleItem) => <li>{subtitleItem}</li>)}
+      </ul>
+
 
       {isOpen && <PortfolioBody info={info} youtube={youtube} links={links} />}
 

@@ -70,9 +70,7 @@ const Navbar = () => {
     >
 
       <Link href={"/"}>
-        <a>
-          <Avatar picture={false} />
-        </a>
+        <Avatar picture={false} />
       </Link>
       <div className={styles.navbarRightSide}>
         <OutlineButton href="/contact">Contato</OutlineButton>
