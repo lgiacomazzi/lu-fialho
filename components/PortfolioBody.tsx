@@ -57,7 +57,7 @@ const PortfolioBody = ({ info, youtube, links }: PortfolioBodyProps) => {
   return (
     <div className={styles.portfolioBody}>
       <div dangerouslySetInnerHTML={{ __html: serialize(info) }} />
-      {youtube && <YoutubeIframe url={youtube} />}
+      {/* {youtube && <YoutubeIframe url={youtube} />} */}
       {links && links.map(link => <PortfolioLink link={link} />)}
     </div>
   );

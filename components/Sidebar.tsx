@@ -60,7 +60,7 @@ const Sidebar = () => {
       <Item url="/about">Sobre mim</Item>
       <Item url="/contact">Contato</Item>
       <Item url="/portfolio">Portfolio</Item>
-      {portfolios && portfolios.map((portfolio) => <SubItem portfolio={portfolio} />)}
+      {/* {portfolios && portfolios.map((portfolio) => <SubItem portfolio={portfolio} />)} */}
       <div className={styles.sidebarFooter}>
         <p>Copyright © Luise Fialho, 2021</p>
       </div>

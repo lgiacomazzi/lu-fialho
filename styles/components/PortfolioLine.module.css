@@ -1,12 +1,13 @@
 .portfolioPreview {
   position: relative;
   margin-bottom: 24px;
-  margin-left: 24px;
 }
 
-.portfolioPreview:nth-child(2n) {
-  margin-left: 0px;
-  max-width: 80vw;
+.portfolioPreview:nth-child(2n) .portfolioDate, 
+.portfolioPreview:nth-child(2n) .portfolioHeader,
+.portfolioPreview:nth-child(2n) .portfolioImage, 
+.portfolioPreview:nth-child(2n) .portfolioSubtitle {
+  margin-left: 20vw;
 }
 
 .portfolioDate {
