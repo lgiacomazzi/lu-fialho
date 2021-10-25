@@ -1,7 +1,23 @@
 @font-face {
+  font-family: "Ogg";
+  src: url("/fonts/Ogg-Regular.ttf");
+  font-style: regular;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Big Caslon";
   src: url("/fonts/BigCaslon-Regular.ttf");
   font-style: regular;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Big Caslon";
+  src: url("/fonts/BigCaslon-Italic.ttf");
+  font-style: italic;
   font-weight: 400;
   font-display: swap;
 }
@@ -40,7 +56,7 @@
 
 :root {
   --ui-dark: #000000;
-  --ui-light: #ffffff;
+  --ui-light: #fff;
 
   --text-01: #000000;
   --text-02: #666666;
@@ -48,13 +64,15 @@
 
   --interactive-dark: #000000;
 
-  --border-color: #E5E5E5;
+  /* --border-color: #E5E5E5; */
+  --border-color: #000000;
 }
 
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  outline-color: var(--interactive-dark);
 }
 
 html {
@@ -112,33 +130,34 @@ span {
 
 h1 {
   font-size: 48px;
-  font-weight: bold;
-  line-height: 130%;
-  font-family: "Big Caslon", serif;
+  line-height: 1.1em;
+  font-family: "Ogg", serif; 
 }
 
 h2 {
-  font-size: 28px;
-  font-weight: bold;
-  font-family: "Big Caslon", serif;
+  font-size: 32px;
+  font-style: italic;
+  font-family: "Ogg", serif; 
+  /* font-family: "Big Caslon", serif; */
+  margin-bottom: .5em;
 }
 
 h3 {
   font-size: 24px;
-  font-weight: bold;
-  font-family: "Big Caslon", serif;
+  font-family: "Ogg", serif; 
+  /* font-family: "Big Caslon", serif; */
 }
 
 h4 {
   font-size: 20px;
-  font-weight: bold;
-  font-family: "Big Caslon", serif;
+  font-family: "Ogg", serif; 
+  /* font-family: "Big Caslon", serif; */
 }
 
 h5 {
   font-size: 18px;
-  font-weight: bold;
-  font-family: "Big Caslon", serif;
+  font-family: "Ogg", serif; 
+  /* font-family: "Big Caslon", serif; */
 }
 
 h6 {
@@ -184,8 +203,10 @@ input, textarea {
   height: 50px;
   padding: 10px;
 
-  border: 1px solid var(--border-color);
-  box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.08);
+  border: none;
+  border-radius: 0px;
+  background-color: var(--ui-light);
+  border-bottom: 1px solid var(--border-color);
 
   width: 260px;
   max-width: 100%;
@@ -221,7 +242,7 @@ textarea {
   transition: 100ms;
 }
 
-.btn:hover {
+a:hover, button:hover, .btn:hover {
   opacity: .9;
 }
 
@@ -233,9 +254,24 @@ textarea {
   margin-bottom: 0px;
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2999;
+
+  background: var(--ui-dark);
+}
+
 @media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
   h1 { 
-    font-size: 36px
+    font-size: 12vw;
   }
 
   .btn, input, textarea {
@@ -247,5 +283,6 @@ textarea {
     padding-right: 16px;
     padding-top: 16px;
     padding-bottom: 48px;
+    border-bottom: 1px solid var(--border-color);
   }
 }

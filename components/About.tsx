@@ -2,11 +2,9 @@ import styles from "../styles/components/About.module.css";
 
 const About = () => {
     return (
-        <div className="container">
-            <div className={styles.aboutHeader}>
-                <h2>Sobre mim</h2>
-                <img src="/profile.png" alt="" />
-            </div>
+        <div className={styles.aboutContainer + " container"}>
+            <img src="/avatar.png" alt="Luise Fialho" />
+            <h2>Sobre mim</h2>
             <p>Oi! Tudo bem?</p>
             <p>Aqui é a Luise e desejo as boas-vindas.</p>
             <p className="lead"><b>Você pode contar comigo para projetos editoriais, redação, produção de conteúdo, leitura crítica e outros trabalhos com o texto, como revisão e preparação.</b></p>

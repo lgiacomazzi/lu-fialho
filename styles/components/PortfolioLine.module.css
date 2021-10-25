@@ -1,11 +1,21 @@
 .portfolioPreview {
   position: relative;
-  
-  border-top: 1px solid var(--border-color);
+  margin-bottom: 48px;
+}
 
-  padding-top: 16px;
+/* .portfolioPreview:nth-child(2n) .portfolioDate, 
+.portfolioPreview:nth-child(2n) .portfolioHeader,
+.portfolioPreview:nth-child(2n) .portfolioImage, 
+.portfolioPreview:nth-child(2n) .portfolioSubtitle {
+  margin-left: auto;
+  width: 65vw;
+} */
 
-  overflow: hidden;
+.portfolioDate {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 10px;
+  filter: opacity(.6);
 }
 
 .portfolioHeader {
@@ -13,63 +23,55 @@
   align-items: flex-start;
   flex-direction: row;
   justify-content: space-between;
-
-  margin-bottom: 8px
-}
-
-.portfolioPreview:hover portfolioHeader >  h3 {
-  text-decoration: underline;
+  margin-bottom: 10px
 }
 
 .portfolioHeader > h3 {
+  line-height: 1.2em;
   max-width: 260px;
 }
 
-.portfolioHeader > span {
-  flex-shrink: 0;
-  /* color: var(--text-02); */
-  margin: 5px 0px;
+.portfolioSubtitle {
+  list-style-type: none;
+  padding-inline-start: 0px;
+  font-size: 16px;
 }
 
-.portfolioPreviewContent ul {
-  list-style-type: "_";
-  padding-inline-start: 10px;
-  font-size: 14px;
-}
-
-.portfolioPreview .portfolioImage {
+.portfolioImage {
   position: relative;
-
   width: 100%;
-  height: 140px;
+  height: 50vw;
+  margin-bottom: 10px;
+  box-shadow: 0px 2px 10px #00000020;
 }
 
 .portfolioPreviewContent {
-  padding: 16px 0px;
+  overflow: hidden;
+}
+
+.portfolioPreviewContent {
+  padding: 12px 0px;
 }
 
 .toggle {
-  background: var(--ui-light);
-  border-radius: 100px;
-  border: 1px solid var(--border-color);
-  /* box-shadow: 0px 2px 10px var(--border-color); */
-  
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+
+  color: var(--interactive-dark);
 
   position: absolute;
   right: 0px;
-  bottom: 16px;
-  
-  transform: rotate(45deg);
-  transition: 200ms;
-  
-  z-index: 1;
+  bottom: 0px;
 
-  filter: invert(1)
+  text-decoration: underline;
+  transition: 200ms;
+  z-index: 1;
+} 
+
+.toggle > img {
+  margin-left: .5em;
+  filter: opacity(.5);
 }
 
 .portfolioPreview[data-open=true] {
@@ -82,6 +84,5 @@
 }
 
 .portfolioPreview[data-open=true] .toggle {
-  transform: rotate(0deg);
-  filter: invert(0);
+  filter: opacity(0);
 }

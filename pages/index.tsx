@@ -1,14 +1,15 @@
-import { useContext } from "react";
+import Head from "next/head";
 import Intro from "../components/Intro";
-import Navbar from '../components/Navbar';
-import Sidebar from '../components/Sidebar';
-import PortfolioLine from "../components/PortfolioLine";
+import Portfolios from "../components/Portfolios";
 import Layout from "../components/Layout";
-import { PortfolioType } from "../types/portfolios";
-import { getAllPortfolios } from "./api/portfolios";
 import About from "../components/About"
 import Contact from "../components/Contact"
+
+import { PortfolioType } from "../types/portfolios";
+import { useContext } from "react";
 import { PortfoliosContext } from "../contexts/PortfoliosContext";
+import { getAllPortfolios } from "./api/portfolios";
+
 
 type HomeProps = {
   portfolios: PortfolioType[];
@@ -24,18 +25,18 @@ export async function getStaticProps() {
 
 export default function Home({ portfolios }: HomeProps) {
   const { setPortfolios } = useContext(PortfoliosContext);
-  console.log(Array.isArray(portfolios))
   setPortfolios(portfolios);
 
   return (
     <Layout home>
-      <Sidebar />
+      <Head>
+        <title>Luise Fialho | Editora e redatora</title>
+        <meta
+          name="description"
+          content="Projetos editoriais - Redação - Leitura crítica - Produção de conteúdo" />
+      </Head>
       <Intro />
-      <div id="portfolios" className="container">
-        {portfolios?.map((portfolio) => (
-          <PortfolioLine portfolio={portfolio} />
-        ))}
-      </div>
+      <Portfolios />
       <About />
       <Contact />
     </Layout>

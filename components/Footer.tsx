@@ -4,6 +4,8 @@ import styles from "../styles/components/Footer.module.css";
 import { signIn, useSession } from "next-auth/client";
 import { useContext } from "react";
 import { PortfoliosContext } from "../contexts/PortfoliosContext";
+import { useRouter } from "next/router";
+import Icon from "./Icon";
 
 const User = () => {
   const [session, loading] = useSession()
@@ -15,23 +17,45 @@ const User = () => {
   return (<Button onClick={() => signIn('google')}>Conectar</Button>)
 }
 
+const Item = ({ children, url = "/" }) => {
+  const { pathname } = useRouter();
+  return (
+    <Link href={url}>
+      <a
+        className={styles.footerItem}
+        data-active={pathname === url}
+      >
+        {children}
+      </a>
+    </Link>
+  )
+}
+
 const Footer = () => {
   const { portfolios } = useContext(PortfoliosContext)
-  console.log("Footer", portfolios)
 
   return (
     <footer className={styles.footer}>
-      <div className="container">
-        <h3>Luise Fialho</h3>
+      <div className="container" style={{ padding: 16 }}>
+
 
         <div className={styles.footerBody}>
-          <Link href="/"><a><li>Home</li></a></Link>
-          <Link href="/about"><a><li>Sobre mim</li></a></Link>
-          <Link href="/contact"><a><li>Contato</li></a></Link>
-          {portfolios && portfolios.map((portfolio) =>
-            <Link href={`/portfolios/${portfolio._id}`}><a><li>{portfolio.title}</li></a></Link>)}
+          <div>
+            <Item url="/">Home</Item>
+            <Item url="/about">Sobre mim</Item>
+            <Item url="/contact">Contato</Item>
+            <Item url="/portfolio">Portfólio</Item>
+          </div>
+          <div className={styles.portfolioLinks}>
+            {portfolios && portfolios.map((portfolio) =>
+              <Item url="/portfolio">
+                <Icon icon="arrow_right" size={20} />{portfolio.title}
+              </Item>)}
+          </div>
         </div>
-        <p>Copyright © Luise Fialho, 2021</p>
+        <h3>Luise Fialho</h3>
+        <p>Editora e Redatora</p>
+        <span>Copyright © Luise Fialho, 2021</span>
       </div>
     </footer>
   );

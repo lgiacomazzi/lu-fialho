@@ -1,0 +1,26 @@
+.avatar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.avatar img {
+  max-width: 16vw;
+  max-height: 16vw;
+  border-radius: 100px;
+}
+.avatar .avatarName {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+.avatar .avatarTitle {
+  font-size: 18px;
+  font-family: "Ogg", serif;
+  text-decoration: none;
+}
+
+.avatar .avatarSubtitle {
+  font-size: 13px;
+  text-decoration: none;
+}

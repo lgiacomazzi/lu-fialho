@@ -1,28 +1,14 @@
-.avatar {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.avatar img {
-  border: 1px solid var(--border-color);
-}
-
-.avatar > :last-child {
-  margin-left: 12px
-}
-
 .intro {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-/* 
-  height: 100vh;
-  min-height: 600px;
 
-  padding-top: 120px; */
+  height: 80vh;
+  min-height: 460px;
+  padding-bottom: 16px;
 }
+
 
 .introHeader {
   display: flex;
@@ -33,18 +19,15 @@
 
 .manifest {
   max-width: 800px;
-  margin-top: 24px;
-  margin-bottom: 60px;
+  margin-top: auto;
+  margin-bottom: 32px;
 }
 
 .introCTA {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-}
-
-.introCTA > * {
-  margin-right: 8px;
+  align-items: center;
+  text-decoration: none;
+  margin-bottom: auto;
 }
 
 .blink {

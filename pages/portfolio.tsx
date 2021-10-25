@@ -1,23 +1,15 @@
-import { AnimateSharedLayout } from "framer-motion";
-import PortfolioLine from "../components/PortfolioLine";
-import { getAllPortfolios } from "./api/portfolios";
+import Head from "next/head";
+import Layout from "../components/Layout";
+import Portfolios from "../components/Portfolios";
 
-export async function getStaticProps() {
-  const portfolios = await getAllPortfolios();
-
-  return {
-    props: { portfolios },
-  };
-}
-
-const Portfolio = ({ portfolios }) => {
+const Portfolio = () => {
   return (
-    <div className="container-fluid">
-      <div className="container">
-        <h2>Portfólio</h2>
-      </div>
-
-    </div>
+    <Layout>
+      <Head>
+        <title>Portfólio | Luise Fialho</title>
+      </Head>
+      <Portfolios />
+    </Layout>
   );
 };
 

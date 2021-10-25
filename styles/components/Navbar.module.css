@@ -3,8 +3,8 @@
   top: 0;
   left: 0;
   right: 0;
+  z-index: 2000;
 
-  z-index: 2;
   background-color: var(--ui-light);
 
   display: flex;
@@ -12,10 +12,17 @@
   justify-content: space-between;
   align-items: center;
 
-  margin-top: 48px;
   height: 60px;
-
+  padding: 0px 16px 0px 0px;
   border-bottom: 1px solid var(--border-color);
+}
+
+.navbarBurgerMenu {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbarMenu {
@@ -55,68 +62,21 @@
   text-decoration: underline;
 }
 
-.navbarMenuPage {
-  padding: 48px;
-  width: 100vw;
-  background: var(--ui-dark);
-  color: var(--text-invert);
-
-  position: fixed;
-  height: 100vh;
-  overflow: scroll;
-  top: 0;
-  left: -100vw;
-
-  z-index: 1000;
-
-  transition: 400ms;
-}
-
-.sidebarCloseButton {
-  filter: invert(1);
-  position: absolute;
-
-  top: 24px;
-  right: 24px;
-}
-
-.navbarMenuPage[data-open=true] {
-  left: 0vw;
-}
-
-.navbarCenter {
+.navbarAvatar {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
-.navbarMenuPage .navbarMenu {
-  flex-direction: column;
-}
-
-.sidebarItem {
-  padding: 6px 16px;
+.navbarRightSide {
   display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  column-gap: .5em;
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    margin: auto;
-  }
-
-  .navbar > h5 {
-    display: inherit;
-  }
-
   .navbarMenu {
     display: none;
-  }
-
-  .navbarRightSide {
-    width: 28px;
-    height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 }

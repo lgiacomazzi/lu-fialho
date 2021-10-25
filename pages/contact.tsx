@@ -1,7 +1,14 @@
 import Contact from "../components/Contact"
 import Layout from "../components/Layout";
 
-const Contato = () => {
+import { useContext } from "react";
+import { PortfoliosContext } from "../contexts/PortfoliosContext";
+
+
+const Contato = ({ portfolios }) => {
+  const { setPortfolios } = useContext(PortfoliosContext); // ???
+  setPortfolios(portfolios); // ???
+
   return (
     <Layout>
       <Contact />
@@ -10,3 +17,4 @@ const Contato = () => {
 };
 
 export default Contato;
+export { getStaticProps } from "../pages" // ???

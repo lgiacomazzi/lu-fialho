@@ -1,12 +1,12 @@
 import Link from "next/link";
 import Icon from "./Icon";
-import styles from "../styles/components/Navbar.module.css";
-import Container from "./Container";
-import Dropdown from "./Dropdown";
 import { UserInterfaceContext } from "../contexts/UserInterfaceContext";
 import { motion, useTransform, useViewportScroll } from "framer-motion";
 import { useContext } from "react";
 import { signIn, signOut, useSession } from "next-auth/client";
+import Button, { OutlineButton } from "./Button";
+import styles from "../styles/components/Navbar.module.css";
+import Avatar from "./Avatar";
 
 export const NavLink = ({ children, href }) => {
   return (
@@ -50,16 +50,13 @@ export const BurgerMenu = () => {
   const { isMenuOpen, setIsMenuOpen } = useContext(UserInterfaceContext);
 
   return (
-    <motion.button
-      whileTap={{ scale: 0.8 }}
-      onClick={() => {
-        setIsMenuOpen(!isMenuOpen)
-        console.log(isMenuOpen)
-      }
+    <button
+      className={styles.navbarBurgerMenu}
+      onClick={() => { setIsMenuOpen(!isMenuOpen) }
       }
     >
       <Icon icon="menu" size={28}></Icon>
-    </motion.button>
+    </button>
   );
 };
 
@@ -69,20 +66,15 @@ const Navbar = () => {
 
   return (
     <motion.div
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.8 }}
-      className={styles.navbar + " container"}
+      className={styles.navbar}
     >
-      <BurgerMenu />
+
       <Link href={"/"}>
-        <motion.div style={{ opacity: visibility }} initial={{ opacity: 0 }} className={styles.navbarCenter}>
-          <h5>Luise Fialho</h5>
-          <span className="comment">Editora e Redatora</span>
-        </motion.div>
+        <Avatar picture={false} />
       </Link>
       <div className={styles.navbarRightSide}>
-        <Link href={"/contato"}><Icon icon="message" size={24} /></Link>
+        <Button href="/contact">Contato</Button>
+        <BurgerMenu />
         <NavMenu />
       </div>
     </motion.div>

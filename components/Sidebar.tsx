@@ -1,32 +1,36 @@
-import styles from "../styles/components/Navbar.module.css";
-import { NavMenu } from "./Navbar";
+import { useContext, useEffect } from "react";
 import Link from "next/link"
+import { useRouter } from 'next/router'
+
+import Icon from './Icon'
+import { RoundButton } from "./Button";
+import styles from "../styles/components/Sidebar.module.css";
 import { PortfoliosContext } from "../contexts/PortfoliosContext";
 import { UserInterfaceContext } from "../contexts/UserInterfaceContext";
-import { motion } from "framer-motion";
-import { useContext, useEffect } from "react";
-import Icon from './Icon'
-import { getAllPortfolios } from "../pages/api/portfolios";
 
 const CloseButton = () => {
   const { isMenuOpen, setIsMenuOpen } = useContext(UserInterfaceContext);
 
   return (
-    <motion.button
-      whileTap={{ scale: 0.8 }}
-      onClick={() => setIsMenuOpen(!isMenuOpen)}
-      className={styles.sidebarCloseButton}
-    >
-      <Icon icon="close" size={28}></Icon>
-    </motion.button>
-  );
+    <RoundButton
+      position="absolute"
+      top={20}
+      right={20}
+      zIndex={1000}
+      onClick={() => setIsMenuOpen(!isMenuOpen)}>
+      <Icon icon="close" size={20} />
+    </RoundButton>)
 };
 
 const Item = ({ children, url = "/" }) => {
+  const { pathname } = useRouter();
   return (
     <Link href={url}>
-      <a className={styles.sidebarItem}>
-        <h2>{children}</h2>
+      <a
+        className={styles.sidebarItem}
+        data-active={pathname === url}
+      >
+        <span>{children}</span>
       </a>
     </Link>
   )
@@ -35,8 +39,9 @@ const Item = ({ children, url = "/" }) => {
 const SubItem = ({ portfolio }) => {
   return (
     <Link href={portfolio._id}>
-      <a className={styles.sidebarItem}>
-        <h3>_{portfolio.title}</h3>
+      <a className={styles.sidebarSubItem}>
+        <Icon icon="arrow_right" size={20} />
+        <span>{portfolio.title}</span>
       </a>
     </Link>
   )
@@ -46,15 +51,22 @@ const Sidebar = () => {
   const { isMenuOpen, setIsMenuOpen } = useContext(UserInterfaceContext);
   const { portfolios } = useContext(PortfoliosContext)
 
+  useEffect(() => setIsMenuOpen(false), []) //fechar quando clicar
+
   return (
-    <motion.div className={styles.navbarMenuPage} data-open={isMenuOpen}>
+    <div className={styles.sidebar} data-open={isMenuOpen}>
       <CloseButton />
-      <Item>Home</Item>
+      <Item url="/">Home</Item>
       <Item url="/about">Sobre mim</Item>
-      <Item url="/portfolio">Portfolio</Item>
-      {portfolios && portfolios.map((portfolio) => <SubItem portfolio={portfolio} />)}
       <Item url="/contact">Contato</Item>
-    </motion.div>
+      <Item url="/portfolio">Portfolio</Item>
+      {/* {portfolios && portfolios.map((portfolio) => <SubItem portfolio={portfolio} />)} */}
+      <div className={styles.sidebarFooter}>
+        <h3>Luise Fialho</h3>
+        <p>Editora e Redatora</p>
+        <span>Copyright © Luise Fialho, 2021</span>
+      </div>
+    </div>
   );
 };
 

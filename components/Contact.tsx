@@ -25,6 +25,7 @@ const ButtonFix = ({ children, onClick }) => {
 
 const ContactForm = () => {
     const [data, setData] = useState({});
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
     const handleChange = (event) => {
         const name = event.target.name;
@@ -35,15 +36,16 @@ const ContactForm = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        setIsSubmitted(true);
         alert("Obrigado pela sua mensagem! :)");
     }
 
     return (
-        <form>
+        <form data-submitted={isSubmitted}>
             <input type="text" name="name" placeholder="Seu nome" onChange={handleChange} />
             <input type="mail" name="mail" placeholder="Seu e-mail" onChange={handleChange} />
             <textarea name="message" placeholder="Sua mensagem" onChange={handleChange} />
-            <ButtonFix onClick={handleSubmit}>Enviar</ButtonFix>
+            <Button onClick={handleSubmit}>Enviar</Button>
         </form>
     )
 }
