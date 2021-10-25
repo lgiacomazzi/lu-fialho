@@ -8,6 +8,7 @@
   min-height: 460px;
 }
 
+
 .introHeader {
   display: flex;
   align-items: flex-start;
@@ -18,6 +19,13 @@
 .manifest {
   max-width: 800px;
   margin-top: auto;
+  margin-bottom: 32px;
+}
+
+.introCTA {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
   margin-bottom: auto;
 }
 

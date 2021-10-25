@@ -1,6 +1,8 @@
 .sidebar {
-  padding: 48px 24px;
+  padding: 60px 24px 24px 24px;
   position: fixed;
+  display: flex;
+  flex-direction: column;
   width: 90vw;
   height: 100vh;
   overflow: scroll;
@@ -28,6 +30,10 @@
   font-size: 20px;
 }
 
+.sidebarItem:first-of-type {
+  border-top: 1px solid var(--border-color);
+}
+
 .sidebarItem[data-active=true] {
   font-weight: bolder;
 }
@@ -44,5 +50,6 @@
 }
 
 .sidebarFooter {
+  margin-bottom: 0px;
   margin-top: auto;
 }

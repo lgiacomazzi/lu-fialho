@@ -62,9 +62,10 @@ const Sidebar = () => {
       <Item url="/portfolio">Portfolio</Item>
       {/* {portfolios && portfolios.map((portfolio) => <SubItem portfolio={portfolio} />)} */}
       <div className={styles.sidebarFooter}>
-        <p>Copyright © Luise Fialho, 2021</p>
+        <h3>Luise Fialho</h3>
+        <p>Editora e Redatora</p>
+        <span>Copyright © Luise Fialho, 2021</span>
       </div>
-      <div className={styles.overlay} />
     </div>
   );
 };

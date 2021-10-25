@@ -25,8 +25,16 @@ const Intro = () => {
         {/* Oi! Sou Luise fialho, editora e redatora. Trabalho com produção de conteúdo e leitura crítica em Porto Alegre. */}
         <span className={styles.blink}>|</span>
       </motion.h1>
-      <OutlineButton mb={10} href="/#portfolios">Conheça meu portfólio</OutlineButton>
-      <Button href="/contact">Contato</Button>
+      <a
+        className={styles.introCTA}
+        href="/#portfolios"
+      >
+        Conheça meu portfólio
+        <Icon icon="arrow_down" size={24} />
+      </a>
+      <Button className="actions">
+        <a href="/contact">Contato<Icon icon="arrow_right" size={24} /></a>
+      </Button>
     </div>
   );
 };
