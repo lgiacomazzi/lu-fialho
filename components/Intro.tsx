@@ -32,8 +32,9 @@ const Intro = () => {
         Conheça meu portfólio
         <Icon icon="arrow_down" size={24} />
       </a>
-      <Button className="actions">
-        <a href="/contact">Contato<Icon icon="arrow_right" size={24} /></a>
+      <Button style={{ alignSelf: "flex-end" }}>
+        Contato
+        <Icon icon="arrow_right" size={24} />
       </Button>
     </div>
   );

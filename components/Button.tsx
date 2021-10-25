@@ -21,6 +21,11 @@ const Button = styled.button`
 
     color: white;
     background-color: var(--interactive-dark);
+
+    > img {
+        filter: invert(1);
+        margin-left: .5em;
+    }
 `;
 
 export const OutlineButton = styled(Button)`

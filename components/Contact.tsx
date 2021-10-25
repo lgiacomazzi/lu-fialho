@@ -45,7 +45,7 @@ const ContactForm = () => {
             <input type="text" name="name" placeholder="Seu nome" onChange={handleChange} />
             <input type="mail" name="mail" placeholder="Seu e-mail" onChange={handleChange} />
             <textarea name="message" placeholder="Sua mensagem" onChange={handleChange} />
-            <ButtonFix onClick={handleSubmit}>Enviar</ButtonFix>
+            <Button onClick={handleSubmit}>Enviar</Button>
         </form>
     )
 }

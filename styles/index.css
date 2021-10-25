@@ -130,14 +130,12 @@ span {
 
 h1 {
   font-size: 48px;
-  font-weight: lighter;
   line-height: 1.1em;
   font-family: "Ogg", serif; 
 }
 
 h2 {
   font-size: 32px;
-  font-weight: lighter;
   font-style: italic;
   font-family: "Ogg", serif; 
   /* font-family: "Big Caslon", serif; */
@@ -146,21 +144,18 @@ h2 {
 
 h3 {
   font-size: 24px;
-  font-weight: lighter;
   font-family: "Ogg", serif; 
   /* font-family: "Big Caslon", serif; */
 }
 
 h4 {
   font-size: 20px;
-  font-weight: bold;
   font-family: "Ogg", serif; 
   /* font-family: "Big Caslon", serif; */
 }
 
 h5 {
   font-size: 18px;
-  font-weight: bold;
   font-family: "Ogg", serif; 
   /* font-family: "Big Caslon", serif; */
 }

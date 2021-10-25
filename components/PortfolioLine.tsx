@@ -5,6 +5,7 @@ import { PortfolioType } from "../types/portfolios";
 import Icon from "./Icon";
 
 import styles from "../styles/components/PortfolioLine.module.css";
+import Button from "./Button";
 
 type PortfolioLineProps = {
   portfolio: PortfolioType;
@@ -43,12 +44,10 @@ const PortfolioLine = ({ portfolio }: PortfolioLineProps) => {
 
       {isOpen && <PortfolioBody info={info} youtube={youtube} links={links} />}
 
-      {/* <button
+      <button
         className={styles.toggle}
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <Icon icon="close" size={20} />
-      </button> */}
+        onClick={() => setIsOpen(!isOpen)}> Ver mais <Icon icon="expand_more" />
+      </button>
 
     </div>
   );
