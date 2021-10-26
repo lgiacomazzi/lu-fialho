@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
 import Link from "next/link"
 import { useRouter } from 'next/router'
+import { motion } from "framer-motion"
 
 import Icon from './Icon'
 import { RoundButton } from "./Button";
@@ -14,7 +15,7 @@ const CloseButton = () => {
   return (
     <RoundButton
       position="absolute"
-      top={20}
+      top={14}
       right={20}
       zIndex={1000}
       onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -24,14 +25,19 @@ const CloseButton = () => {
 
 const Item = ({ children, url = "/" }) => {
   const { pathname } = useRouter();
+  const variants = {
+    hidden: { opacity: 1, x: 20 },
+    show: { opacity: 1, x: 0 },
+  }
   return (
     <Link href={url}>
-      <a
+      <motion.a
+        variants={variants}
         className={styles.sidebarItem}
         data-active={pathname === url}
       >
         <span>{children}</span>
-      </a>
+      </motion.a>
     </Link>
   )
 }
@@ -49,18 +55,37 @@ const SubItem = ({ portfolio }) => {
 
 const Sidebar = () => {
   const { isMenuOpen, setIsMenuOpen } = useContext(UserInterfaceContext);
-  const { portfolios } = useContext(PortfoliosContext)
+  // const { portfolios } = useContext(PortfoliosContext)
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  }
 
   useEffect(() => setIsMenuOpen(false), []) //fechar quando clicar
 
   return (
     <div className={styles.sidebar} data-open={isMenuOpen}>
       <CloseButton />
-      <Item url="/">Home</Item>
-      <Item url="/about">Sobre mim</Item>
-      <Item url="/contact">Contato</Item>
-      <Item url="/portfolio">Portfolio</Item>
+      <motion.div
+        initial="hidden"
+        animate={isMenuOpen ? "show" : "hidden"}
+        variants={container}
+      >
+        <Item url="/">Home</Item>
+        <Item url="/about">Sobre mim</Item>
+        <Item url="/contact">Contato</Item>
+        <Item url="/portfolio">Portfolio</Item>
+      </motion.div>
+
       {/* {portfolios && portfolios.map((portfolio) => <SubItem portfolio={portfolio} />)} */}
+
       <div className={styles.sidebarFooter}>
         <h3>Luise Fialho</h3>
         <p>Editora e Redatora</p>

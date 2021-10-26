@@ -16,7 +16,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-
+  margin-top: 48px;
   margin-bottom: 48px;
 }
 
@@ -38,6 +38,7 @@
 .portfolioLinks .footerItem {
   font-weight: inherit;
   font-size: 14px;
+  font-family: var(--sans-serif);
   column-gap: .5em;
   display: flex;
 }

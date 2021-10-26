@@ -7,6 +7,7 @@ import { signIn, signOut, useSession } from "next-auth/client";
 import Button, { OutlineButton } from "./Button";
 import styles from "../styles/components/Navbar.module.css";
 import Avatar from "./Avatar";
+import { useRouter } from "next/router";
 
 export const NavLink = ({ children, href }) => {
   return (
@@ -39,9 +40,9 @@ export const NavMenu = () => {
     <div className={styles.navbarMenu}>
       <NavLink href="/">Home</NavLink>
       <NavLink href="/portfolio">Portfolio</NavLink>
-      <NavLink href="/blog">Blog</NavLink>
-      <NavLink href="/sobre-mim">Sobre Mim</NavLink>
-      <NavLink href="/contato">Contato</NavLink>
+      {/* <NavLink href="/blog">Blog</NavLink> */}
+      <NavLink href="/about">Sobre Mim</NavLink>
+      <NavLink href="/contact">Contato</NavLink>
     </div>
   );
 };
@@ -61,21 +62,28 @@ export const BurgerMenu = () => {
 };
 
 const Navbar = () => {
-  const { scrollYProgress } = useViewportScroll();
-  const visibility = useTransform(scrollYProgress, [0, 10], [0, 100]);
+  const { pathname } = useRouter();
+
+  const { scrollY } = useViewportScroll();
+  let visibility = useTransform(scrollY, [0, 0], [-100, 0]);
+
+  if (pathname === "/") {
+    visibility = useTransform(scrollY, [0, 400], [-100, 0]);
+  }
 
   return (
     <motion.div
+      style={{ y: visibility }}
       className={styles.navbar}
     >
-
       <Link href={"/"}>
-        <Avatar picture={false} />
+        <a style={{ textDecoration: "none" }}>
+          <Avatar picture={false} /></a>
       </Link>
       <div className={styles.navbarRightSide}>
+        <NavMenu />
         <Button href="/contact">Contato</Button>
         <BurgerMenu />
-        <NavMenu />
       </div>
     </motion.div>
   );

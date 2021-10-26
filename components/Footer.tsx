@@ -38,7 +38,8 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className="container" style={{ padding: 16 }}>
 
-
+        <h3>Luise Fialho</h3>
+        <p>Editora e Redatora</p>
         <div className={styles.footerBody}>
           <div>
             <Item url="/">Home</Item>
@@ -53,8 +54,7 @@ const Footer = () => {
               </Item>)}
           </div>
         </div>
-        <h3>Luise Fialho</h3>
-        <p>Editora e Redatora</p>
+
         <span>Copyright © Luise Fialho, 2021</span>
       </div>
     </footer>

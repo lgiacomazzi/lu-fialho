@@ -21,11 +21,10 @@ const PortfolioLine = ({ portfolio }: PortfolioLineProps) => {
       data-open={isOpen}
     >
 
-      <div className={styles.portfolioDate}>{date}</div>
-
       {image &&
         <div className={styles.portfolioImage}>
           <Image
+            priority
             onClick={() => setIsOpen(true)}
             src={`/portfolio/${image}`}
             alt={portfolio.title}
@@ -35,18 +34,18 @@ const PortfolioLine = ({ portfolio }: PortfolioLineProps) => {
 
       <div className={styles.portfolioHeader}>
         <h3 onClick={() => setIsOpen(true)}>{title}</h3>
+        <div className={styles.portfolioDate}>{date}</div>
       </div>
 
       <ul className={styles.portfolioSubtitle}>
         {subtitle && subtitle.map((subtitleItem) => <li>{subtitleItem}</li>)}
       </ul>
 
-
       {isOpen && <PortfolioBody info={info} youtube={youtube} links={links} />}
 
       <button
         className={styles.toggle}
-        onClick={() => setIsOpen(!isOpen)}> Ver mais <Icon icon="expand_more" />
+        onClick={() => setIsOpen(!isOpen)}> Ver mais <Icon icon="expand_more" size={16} />
       </button>
 
     </div>

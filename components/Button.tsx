@@ -24,7 +24,6 @@ const Button = styled.button`
 
     > img {
         filter: invert(1);
-        margin-left: .5em;
     }
 `;
 

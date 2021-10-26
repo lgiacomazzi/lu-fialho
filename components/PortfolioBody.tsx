@@ -3,6 +3,8 @@ import YoutubeIframe from "../components/YoutubeIframe";
 import { PortfolioLinkType } from "../types/portfolios";
 import escapeHtml from 'escape-html'
 import { Text, Node } from 'slate'
+import { AnimatePresence, motion } from "framer-motion";
+
 
 type PortfolioBodyProps = {
   info: any;
@@ -55,11 +57,17 @@ const serialize = node => {
 
 const PortfolioBody = ({ info, youtube, links }: PortfolioBodyProps) => {
   return (
-    <div className={styles.portfolioBody}>
-      <div dangerouslySetInnerHTML={{ __html: serialize(info) }} />
-      {/* {youtube && <YoutubeIframe url={youtube} />} */}
-      {links && links.map(link => <PortfolioLink link={link} />)}
-    </div>
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0 }}
+        className={styles.portfolioBody}>
+        <div dangerouslySetInnerHTML={{ __html: serialize(info) }} />
+        {/* {youtube && <YoutubeIframe url={youtube} />} */}
+        {links && links.map(link => <PortfolioLink link={link} />)}
+      </motion.div>
+    </AnimatePresence>
   );
 };
 

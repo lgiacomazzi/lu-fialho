@@ -1,5 +1,5 @@
 .sidebar {
-  padding: 60px 24px 24px 24px;
+  padding: 60px 24px 48px 24px;
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -22,11 +22,15 @@
 }
 
 .sidebarItem {
-  padding: 10px 20px;
-  display: block;
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
   border-bottom: 1px solid var(--border-color);
   text-decoration: none;
-  font-family: "Ogg", serif;
+  font-family: var(--serif);
+  font-weight: bold;
   font-size: 20px;
 }
 
@@ -34,8 +38,11 @@
   border-top: 1px solid var(--border-color);
 }
 
-.sidebarItem[data-active=true] {
-  font-weight: bolder;
+.sidebarItem[data-active=true]::after {
+  content: url("/svg/asterisk.svg");
+  margin-left: .5em;
+  height: 24px;
+  width: 24px;
 }
 
 .sidebarSubItem {

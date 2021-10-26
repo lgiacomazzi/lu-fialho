@@ -15,9 +15,9 @@ const Intro = () => {
         <BurgerMenu />
       </div>
       <motion.h1
-        // initial={{ opacity: 0 }}
-        // animate={{ opacity: 1 }}
-        // transition={{ delay: 0.3 }}
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.3 }}
         className={styles.manifest}
       >
         Oi! Sou editora, redatora e produtora de conteúdo
@@ -25,13 +25,16 @@ const Intro = () => {
         {/* Oi! Sou Luise fialho, editora e redatora. Trabalho com produção de conteúdo e leitura crítica em Porto Alegre. */}
         <span className={styles.blink}>|</span>
       </motion.h1>
-      <a
+      <motion.a
         className={styles.introCTA}
         href="/#portfolios"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6 }}
       >
         Conheça meu portfólio
         <Icon icon="arrow_down" size={24} />
-      </a>
+      </motion.a>
       <Button style={{ alignSelf: "flex-end" }}>
         Contato
         <Icon icon="arrow_right" size={24} />

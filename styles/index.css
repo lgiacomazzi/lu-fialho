@@ -66,6 +66,9 @@
 
   /* --border-color: #E5E5E5; */
   --border-color: #000000;
+
+  --serif: "Ogg", serif; 
+  --sans-serif: "Helvetica Neue", sans-serif;
 }
 
 * {
@@ -84,7 +87,7 @@ body {
   color: var(--text-01);
   font-size: 16px;
   font-weight: 300;
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: var(--sans-serif);
   cursor: url("/svg/cursor.svg") 4 1, auto;
 }
 
@@ -130,40 +133,37 @@ span {
 
 h1 {
   font-size: 48px;
-  line-height: 1.1em;
-  font-family: "Ogg", serif; 
+  font-family: var(--serif);
+  line-height: 1.2em;
+  font-weight: lighter;
 }
 
 h2 {
   font-size: 32px;
   font-style: italic;
-  font-family: "Ogg", serif; 
-  /* font-family: "Big Caslon", serif; */
+  font-family: var(--serif);
   margin-bottom: .5em;
 }
 
 h3 {
-  font-size: 24px;
-  font-family: "Ogg", serif; 
-  /* font-family: "Big Caslon", serif; */
+  font-size: 28px;
+  font-family: var(--serif);
 }
 
 h4 {
   font-size: 20px;
-  font-family: "Ogg", serif; 
-  /* font-family: "Big Caslon", serif; */
+  font-family: var(--serif);
 }
 
 h5 {
   font-size: 18px;
-  font-family: "Ogg", serif; 
-  /* font-family: "Big Caslon", serif; */
+  font-family: var(--serif);
 }
 
 h6 {
   font-size: 16px;
   font-weight: bold;
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: var(--sans-serif);
 }
 
 p.lead {

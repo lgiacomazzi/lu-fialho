@@ -9,18 +9,6 @@ import { useContext } from "react";
 import { UserInterfaceContext } from "../contexts/UserInterfaceContext";
 import { AnimatePresence, motion } from "framer-motion";
 
-const BackButton = () => {
-    return (
-        <RoundButton
-            position="fixed"
-            top={16}
-            left={16}
-            zIndex={1000}
-            onClick={() => Router.back()}>
-            <Icon icon="chevron-left" size={20} />
-        </RoundButton>)
-}
-
 const Overlay = () => {
     const { isMenuOpen, setIsMenuOpen } = useContext(UserInterfaceContext);
 
@@ -41,8 +29,8 @@ const Overlay = () => {
 
 const Layout = ({ children, home = false }) => {
     return (
-        <Box>
-            {!home && <Navbar />}
+        <Box pt={home ? 0 : 60}>
+            <Navbar />
             <Sidebar />
             {children}
             <Footer />
