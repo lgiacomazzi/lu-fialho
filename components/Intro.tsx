@@ -4,6 +4,7 @@ import Icon from "./Icon";
 import Avatar from "./Avatar";
 import { BurgerMenu } from "./Navbar";
 import Button, { OutlineButton } from "./Button";
+import router from "next/router";
 
 // const transition = { duration: 0.6, ease: [0.65, 0, 0.35, 1] };
 
@@ -35,11 +36,11 @@ const Intro = () => {
         Conheça meu portfólio
         <Icon icon="arrow_down" size={24} />
       </motion.a>
-      <Button style={{ alignSelf: "flex-end" }}>
+      <Button style={{ alignSelf: "flex-end" }} onClick={() => router.push("/contact")}>
         Contato
         <Icon icon="arrow_right" size={24} />
       </Button>
-    </div>
+    </div >
   );
 };
 

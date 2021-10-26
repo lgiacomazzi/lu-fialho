@@ -7,7 +7,7 @@ import { signIn, signOut, useSession } from "next-auth/client";
 import Button, { OutlineButton } from "./Button";
 import styles from "../styles/components/Navbar.module.css";
 import Avatar from "./Avatar";
-import { useRouter } from "next/router";
+import router, { useRouter } from "next/router";
 
 export const NavLink = ({ children, href }) => {
   return (
@@ -65,15 +65,17 @@ const Navbar = () => {
   const { pathname } = useRouter();
 
   const { scrollY } = useViewportScroll();
+  console.log(scrollY)
   let visibility = useTransform(scrollY, [0, 0], [-100, 0]);
 
   if (pathname === "/") {
-    visibility = useTransform(scrollY, [0, 400], [-100, 0]);
+    visibility = useTransform(scrollY, [0, 399, 400], [-100, -100, 0]);
   }
 
   return (
     <motion.div
       style={{ y: visibility }}
+      transition={{ duration: 2 }}
       className={styles.navbar}
     >
       <Link href={"/"}>
@@ -83,10 +85,10 @@ const Navbar = () => {
       </Link>
       <div className={styles.navbarRightSide}>
         <NavMenu />
-        <Button href="/contact">Contato</Button>
+        <Button onClick={() => router.push("/contact")}>Contato</Button>
         <BurgerMenu />
       </div>
-    </motion.div>
+    </motion.div >
   );
 };
 export default Navbar;

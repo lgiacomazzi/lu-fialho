@@ -22,8 +22,11 @@ const Button = styled.button`
     color: white;
     background-color: var(--interactive-dark);
 
+    transition: 100ms;
+    
     > img {
         filter: invert(1);
+        margin-left: .5em;
     }
 `;
 
@@ -36,11 +39,11 @@ export const OutlineButton = styled(Button)`
 export const RoundButton = styled(Button)`
     border-radius: 100px;
     padding: 0px;
-    height: 32px;
-    width: 32px;
+    height: ${props => props.size ? props.size + "px" : "32px"};
+    width: ${props => props.size ? props.size + "px" : "32px"};
 
     > img {
-        filter: invert(1);
+        margin: 0;
     }
 `;
 

@@ -2,7 +2,7 @@ import Box from "./Box"
 import Footer from "./Footer";
 import Icon from "./Icon"
 import Router from 'next/router'
-import { RoundButton } from "./Button";
+import Button, { RoundButton } from "./Button";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import { useContext } from "react";
@@ -27,12 +27,22 @@ const Overlay = () => {
     )
 }
 
+const ScrollTop = () => {
+
+    return (
+        <RoundButton size={44} position="fixed" bottom={16} right={16}>
+            <Icon icon="arrow_up" size={24} />
+        </RoundButton>
+    )
+}
+
 const Layout = ({ children, home = false }) => {
     return (
         <Box pt={home ? 0 : 60}>
             <Navbar />
             <Sidebar />
             {children}
+            <ScrollTop />
             <Footer />
             <Overlay />
         </Box>
