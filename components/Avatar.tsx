@@ -5,9 +5,10 @@ import styles from "../styles/components/Avatar.module.css";
 type AvatarProps = {
     size?: number;
     picture?: boolean;
+    subtitle?: boolean;
 }
 
-const Avatar = ({ picture = true, size = 60 }: AvatarProps) => {
+const Avatar = ({ picture = true, size = 60, subtitle = true }: AvatarProps) => {
     return (
         <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -23,7 +24,7 @@ const Avatar = ({ picture = true, size = 60 }: AvatarProps) => {
                 objectFit="cover" />}
             <div className={styles.avatarName}>
                 <span className={styles.avatarTitle}>Luise Fialho</span>
-                <span className={styles.avatarSubtitle}>Editora e Redatora</span>
+                {subtitle && <span className={styles.avatarSubtitle}>Editora e Redatora</span>}
             </div>
         </motion.div>)
 }

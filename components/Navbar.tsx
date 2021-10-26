@@ -78,7 +78,7 @@ const Navbar = () => {
     >
       <Link href={"/"}>
         <a style={{ textDecoration: "none" }}>
-          <Avatar picture={false} />
+          <Avatar picture={false} subtitle={false} />
         </a>
       </Link>
       <div className={styles.navbarRightSide}>
