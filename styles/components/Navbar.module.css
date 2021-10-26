@@ -71,12 +71,21 @@
   column-gap: .5em;
 }
 
-@media (max-width: 768px) {
+
+/* Mobile Only */
+@media (max-width: 786px) {
   .navbarMenu {
     display: none;
   }
+}
+
+/* Desktop Only*/
+@media (min-width: 768px) {
+  .navbar {
+    padding: 0px calc((100vw - var(--container-width))/2);
+  }
 
   .navbarBurgerMenu {
-    justify-self: flex-end;
+    display: none;
   }
 }

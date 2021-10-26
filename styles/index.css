@@ -64,11 +64,12 @@
 
   --interactive-dark: #000000;
 
-  /* --border-color: #E5E5E5; */
   --border-color: #000000;
 
   --serif: "Ogg", serif; 
   --sans-serif: "Helvetica Neue", sans-serif;
+
+  --container-width: 1200px;
 }
 
 * {
@@ -86,7 +87,7 @@ body {
   background-color: var(--ui-light);
   color: var(--text-01);
   font-size: 16px;
-  font-weight: 300;
+  font-weight: regular;
   font-family: var(--sans-serif);
   cursor: url("/svg/cursor.svg") 4 1, auto;
 }
@@ -180,7 +181,7 @@ p {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: var(--container-width);
   margin: auto;
   padding-left: 24px;
   padding-right: 24px;

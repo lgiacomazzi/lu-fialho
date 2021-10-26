@@ -87,3 +87,17 @@
 .portfolioPreview[data-open=true] .toggle {
   filter: opacity(0);
 }
+
+/* Mobile Only */
+@media (max-width: 786px) {
+  
+}
+
+/* Desktop Only*/
+@media (min-width: 768px) {
+  .portfolioImage {
+    width: 400px;
+    height: 300px;
+  }
+}
+

@@ -42,7 +42,7 @@ export const NavMenu = () => {
       <NavLink href="/portfolio">Portfolio</NavLink>
       {/* <NavLink href="/blog">Blog</NavLink> */}
       <NavLink href="/about">Sobre Mim</NavLink>
-      <NavLink href="/contact">Contato</NavLink>
+      {/* <NavLink href="/contact">Contato</NavLink> */}
     </div>
   );
 };
@@ -78,7 +78,8 @@ const Navbar = () => {
     >
       <Link href={"/"}>
         <a style={{ textDecoration: "none" }}>
-          <Avatar picture={false} /></a>
+          <Avatar picture={false} />
+        </a>
       </Link>
       <div className={styles.navbarRightSide}>
         <NavMenu />
