@@ -1,7 +1,7 @@
 import Box from "./Box"
 import Footer from "./Footer";
 import Icon from "./Icon"
-import Router from 'next/router'
+import Router, { useRouter } from 'next/router'
 import Button, { RoundButton } from "./Button";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
@@ -37,12 +37,17 @@ const ScrollTop = () => {
 }
 
 const Layout = ({ children, home = false }) => {
+    const { pathname } = useRouter();
+    if (pathname === "/") {
+        home = true;
+    }
+
     return (
         <Box pt={home ? 0 : 60}>
             <Navbar />
             <Sidebar />
             {children}
-            <ScrollTop />
+            {/* <ScrollTop /> */}
             <Footer />
             <Overlay />
         </Box>

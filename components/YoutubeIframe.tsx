@@ -1,6 +1,17 @@
+import Icon from "./Icon";
+
 const YoutubeIframe = ({ url }) => {
     return (
-        <iframe src={url} frameBorder="0"></iframe>
+        <>
+            <h4>Assista no Youtube:</h4>
+            <iframe style={{
+                width: "50%",
+                height: "25vw",
+                borderRadius: "5px",
+            }}
+                src={url}
+                frameBorder="0"></iframe>
+        </>
     );
 };
 

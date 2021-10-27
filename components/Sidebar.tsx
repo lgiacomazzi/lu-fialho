@@ -26,7 +26,7 @@ const CloseButton = () => {
 const Item = ({ children, url = "/" }) => {
   const { pathname } = useRouter();
   const variants = {
-    hidden: { opacity: 1, x: 20 },
+    hidden: { opacity: 0, x: 10 },
     show: { opacity: 1, x: 0 },
   }
   return (

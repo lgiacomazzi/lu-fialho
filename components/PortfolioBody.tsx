@@ -4,6 +4,7 @@ import { PortfolioLinkType } from "../types/portfolios";
 import escapeHtml from 'escape-html'
 import { Text, Node } from 'slate'
 import { AnimatePresence, motion } from "framer-motion";
+import Icon from "./Icon";
 
 
 type PortfolioBodyProps = {
@@ -15,10 +16,11 @@ type PortfolioBodyProps = {
 const PortfolioLink = ({ link }) => {
   return (
     <div className={styles.portfolioLink}>
+      <Icon icon="asterisk" size={16} />
       <a href={link.url} target="_blank" style={{ textDecoration: "underline" }}>
-        <h4>{link.title}</h4>
+        <h5>{link.title}</h5>
       </a>
-      <span className="comment">{link.info}</span>
+      <div dangerouslySetInnerHTML={{ __html: serialize(link.info) }} />
     </div>
   )
 }
@@ -48,6 +50,8 @@ const serialize = node => {
       return `<h3>${children}</h3>`
     case 'paragraph':
       return `<p>${children}</p>`
+    case 'list-item':
+      return `<li>${children}</li>`
     case 'link':
       return `<a href="${escapeHtml(node.url)}">${children}</a>`
     default:
@@ -65,6 +69,7 @@ const PortfolioBody = ({ info, youtube, links }: PortfolioBodyProps) => {
         className={styles.portfolioBody}>
         <div dangerouslySetInnerHTML={{ __html: serialize(info) }} />
         {/* {youtube && <YoutubeIframe url={youtube} />} */}
+        {youtube && <YoutubeIframe url={youtube} />}
         {links && links.map(link => <PortfolioLink link={link} />)}
       </motion.div>
     </AnimatePresence>

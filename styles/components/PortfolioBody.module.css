@@ -12,6 +12,26 @@
     margin-bottom: 16px;
 }
 
+.portfolioBody h3, 
+.portfolioBody h4 {
+    margin-top: 1em;
+}
+
 .portfolioLink {
-    margin-bottom: 1em;
+    position: relative;
+    padding-inline-start: 24px;
+    margin-bottom: 2em;
+}
+
+.portfolioLink > img {
+    position: absolute;
+    top: 4px;
+    left: 0px;
+}
+
+.portfolioLink li {
+    list-style: "-  ";
+    line-height: 140%;
+    padding-inline-start: 0px;
+
 }
