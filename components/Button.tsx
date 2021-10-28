@@ -39,8 +39,8 @@ export const OutlineButton = styled(Button)`
 export const RoundButton = styled(Button)`
     border-radius: 100px;
     padding: 0px;
-    height: ${props => props.size ? props.size + "px" : "32px"};
-    width: ${props => props.size ? props.size + "px" : "32px"};
+    height: 32px;
+    width: 32px;
 
     > img {
         margin: 0;

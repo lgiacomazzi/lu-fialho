@@ -17,11 +17,6 @@ const ContactLink = ({ children, name, url }) => {
         </Link>
     )
 }
-const ButtonFix = ({ children, onClick }) => {
-    return (
-        <button className="btn" onClick={onClick}>{children}</button>
-    )
-}
 
 const ContactForm = () => {
     const [data, setData] = useState({});

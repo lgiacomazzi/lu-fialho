@@ -65,7 +65,7 @@ const PortfolioBody = ({ info, youtube, links }: PortfolioBodyProps) => {
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0 }}
+        exit={{ opacity: 1, y: -20, transition: { delay: 1 } }}
         className={styles.portfolioBody}>
         <div dangerouslySetInnerHTML={{ __html: serialize(info) }} />
         {/* {youtube && <YoutubeIframe url={youtube} />} */}

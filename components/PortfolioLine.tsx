@@ -45,7 +45,9 @@ const PortfolioLine = ({ portfolio }: PortfolioLineProps) => {
 
       <button
         className={styles.toggle}
-        onClick={() => setIsOpen(!isOpen)}> Ver mais <Icon icon="expand_more" size={16} />
+        onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? "Fechar" : "Ver mais"}
+        {isOpen ? <Icon icon="expand_less" size={16} /> : <Icon icon="expand_more" size={16} />}
       </button>
 
     </div>

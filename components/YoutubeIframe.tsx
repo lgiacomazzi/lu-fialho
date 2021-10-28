@@ -8,6 +8,7 @@ const YoutubeIframe = ({ url }) => {
                 width: "50%",
                 height: "25vw",
                 borderRadius: "5px",
+                background: "#aaaaaa"
             }}
                 src={url}
                 frameBorder="0"></iframe>
