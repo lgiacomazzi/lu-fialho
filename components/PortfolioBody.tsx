@@ -61,18 +61,17 @@ const serialize = node => {
 
 const PortfolioBody = ({ info, youtube, links }: PortfolioBodyProps) => {
   return (
-    <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 1, y: -20, transition: { delay: 1 } }}
-        className={styles.portfolioBody}>
-        <div dangerouslySetInnerHTML={{ __html: serialize(info) }} />
-        {/* {youtube && <YoutubeIframe url={youtube} />} */}
-        {youtube && <YoutubeIframe url={youtube} />}
-        {links && links.map(link => <PortfolioLink link={link} />)}
-      </motion.div>
-    </AnimatePresence>
+
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -10 }}
+      className={styles.portfolioBody}>
+      <div dangerouslySetInnerHTML={{ __html: serialize(info) }} />
+      {/* {youtube && <YoutubeIframe url={youtube} />} */}
+      {youtube && <YoutubeIframe url={youtube} />}
+      {links && links.map(link => <PortfolioLink link={link} />)}
+    </motion.div>
   );
 };
 

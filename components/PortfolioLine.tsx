@@ -6,6 +6,7 @@ import Icon from "./Icon";
 
 import styles from "../styles/components/PortfolioLine.module.css";
 import Button from "./Button";
+import { AnimatePresence } from "framer-motion";
 
 type PortfolioLineProps = {
   portfolio: PortfolioType;
@@ -41,7 +42,9 @@ const PortfolioLine = ({ portfolio }: PortfolioLineProps) => {
         {subtitle && subtitle.map((subtitleItem) => <li>{subtitleItem}</li>)}
       </ul>
 
-      {isOpen && <PortfolioBody info={info} youtube={youtube} links={links} />}
+      <AnimatePresence>
+        {isOpen && <PortfolioBody info={info} youtube={youtube} links={links} />}
+      </AnimatePresence>
 
       <button
         className={styles.toggle}
